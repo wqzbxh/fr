@@ -81,4 +81,9 @@ class ExportController
         unset($spreadsheet);
 
     }
+
+    public function pdf()
+    {
+        echo 'ceshi';
+    }
 }

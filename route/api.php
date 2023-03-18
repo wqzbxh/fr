@@ -14,3 +14,4 @@ Router::group('admin_',function (){
 });
 
 Router::get('doc','common/Export/exportSql');
+Router::get('pdf','common/Export/pdf');
