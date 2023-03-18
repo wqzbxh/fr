@@ -1,0 +1,15 @@
+{
+    "name": "why/fr",
+    "description": "frames of self-perception.",
+    "require": {
+        "php": ">=7.3",
+        "phpoffice/phpspreadsheet": "^1.28",
+        "smarty/smarty": "^4.3"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "libs\\": "libs/",
+            "app\\": "app/"
+        }
+    }
+}
