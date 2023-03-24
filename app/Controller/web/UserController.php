@@ -7,6 +7,7 @@
  */
 
 namespace app\Controller\web;
+use app\Extend\Aop;
 use app\Model\UserModel;
 use libs\core\CoreController;
 
@@ -20,5 +21,10 @@ class UserController extends CoreController
         $this->template->assign("title", 'WHY', true);
         $this->template->display('./app/View/web/index/index.tpl');
 
+    }
+
+    public function logRecord()
+    {
+       echo '1;';
     }
 }

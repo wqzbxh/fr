@@ -9,3 +9,4 @@
 use libs\core\Router;
 
 Router::add('user/index','web/user/index');
+Router::add('log','web/user/logRecord');

@@ -50,8 +50,8 @@ class Path
                 'action'=>array_pop($path_arr) ?? 'index'
             ];
         }else{
-
             echo '错误的路由';
+            exit;
         };
 
     }
@@ -93,6 +93,7 @@ class Path
         }else{
 
             echo '错误的路由';
+            exit;
         };
     }
 

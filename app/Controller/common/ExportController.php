@@ -8,14 +8,87 @@
 
 namespace app\Controller\common;
 
+
 use libs\db\Db;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
+use FPDF;
 class ExportController
 {
+
+    public function pdf()
+    {
+        $title = 'Werbung / Vermittler:';
+        $pdf = new FPDF();
+        $pdf->AddPage();
+        $this->Header($pdf);
+        $pw=$pdf->GetPageWidth();
+        $pw6 = $pw * 0.6;
+//        标头
+        $pdf->SetFont('Arial','B',10  );
+        $pdf->Cell(122);
+        $pdf->Cell(0,0,$title,0,0);
+        $curY  = $pdf->GetY();
+        $pdf->SetLineWidth(0.3);
+        $pdf->Line(130,$curY+10,200,$curY+10);
+        $pdf->Line(130,$curY+10,130,8);
+        $curY  = $pdf->GetY();
+        $pdf->Ln(18);
+        $a = 'CARL ACH e.K . 92324 WEIDEN';
+        $al = $pdf->GetStringWidth($a);
+        $a1 = 'Seegasse 1a';
+        $a2 = 'Tel:(0961) 67090-0· Telefax( 0961 )29910';
+        $pdf->SetFont('Arial','B',11 );
+        $pdf->Cell(0,0,$a,0,2);
+        $pdf->Cell(140);
+        $pdf->SetFont('Arial','',8 );
+        $pdf->Cell(0,0,"qwewqe",0,2);
+
+        $pdf->Ln(3);
+        $pdf->Cell(140);
+        $pdf->SetFont('Arial','',8 );
+        $pdf->Cell(0,0,"qwewqe",0,1);
+
+
+        $az = "Autovermietung";
+
+        $pdf->Cell(66);
+        $pdf->SetFont('Times','B',15 );;
+        $pdf->Cell(0,0,$az,0,2);
+        $pdf->SetFont('Times','',9 );
+        $pdf->SetTextColor(0, 0, 23);
+        $pdf->Write(10, 'Selbstfahrer·Mietvertrag und RechnungTel');
+
+
+
+        $pdf->Ln(2);
+        $pdf->Cell(18);
+        $pdf->SetFont('Times','',9);
+        $pdf->Cell(0,0,$a1,0,2);
+        $pdf->Ln(1);
+        $a2l = $pdf->GetStringWidth($a2);
+        $pdf->SetLineWidth(0);
+        $pdf->SetFont('Times','',10 );
+        $pdf->Cell($a2l,6,$a2,'B',1);
+
+
+
+
+        $curY  = $pdf->GetY();
+        $curX  = $pdf->GetStringWidth($title);
+//        $pdf->Line(10,$curY,$curX+25,$curY);
+        $pdf->AddPage();
+        $pdf->Output();
+
+    }
+
+    public function  Header(object $pdf)
+    {
+        $pdf->Image('./public/image/logo.jpg',5,9,75);
+
+    }
     /**
      * @return void
      * @throws \PhpOffice\PhpSpreadsheet\Exception
@@ -82,8 +155,5 @@ class ExportController
 
     }
 
-    public function pdf()
-    {
-        echo 'ceshi';
-    }
+
 }

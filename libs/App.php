@@ -42,7 +42,7 @@ class App{
               $method = $path_arr['action'];
               if(method_exists($class,$method))
               {
-                  $result = $class->$method();
+                  $result = self::exec($class,$class_name,$method);
                   if(is_array($result)){
                       echo json_encode($result);
                   }
@@ -55,6 +55,20 @@ class App{
       }catch (\Throwable $e){
             echo $e->getMessage();
       }
+
+    }
+    public static function exec($class,$classname,$method)
+    {
+        global $_CONFIG;
+        $res = $class->$method();
+        $aopAfter = $classname;
+        if(!empty($_CONFIG['aop'][$aopAfter])){
+            $aopClassName = $_CONFIG['aop'][$aopAfter];
+            $aopClass = new $aopClassName;
+            $aopClass->exec($res);
+        }
+        return $res;
+
 
     }
 }

@@ -6,6 +6,6 @@
  * Time:  22:19
  * 清除缓存文件
  */
-file_put_contents('./cache/config', "");
-file_put_contents('./cache/route', "");
+file_put_contents('../cache/config', "");
+file_put_contents('../cache/route', "");
 echo 'clear success!';

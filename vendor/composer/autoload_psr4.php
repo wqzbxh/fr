@@ -6,8 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'libs\\' => array($baseDir . '/libs'),
-    'app\\' => array($baseDir . '/app'),
+    'libs\\' => array($baseDir . '/libs', $baseDir . '/libs'),
+    'app\\' => array($baseDir . '/app', $baseDir . '/app'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
