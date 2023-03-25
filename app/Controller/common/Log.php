@@ -6,6 +6,7 @@
  * Time: 22:33
  */
 
+
 namespace app\Controller\common;
 
 use app\Extend\Aop;
@@ -15,6 +16,6 @@ class Log extends Aop
     public function exec()
     {
         // TODO: Implement exec() method.
-        echo '记录日志';
+//        echo '记录日志';
     }
 }

@@ -8,5 +8,6 @@
 return [
     'app_name' => 'HaiyangTest',
     'is_forced_router' => true,
+    'debug' => true,
 
 ];

@@ -21,16 +21,20 @@ class LoadRouter
 //        查看文件夹中是否有该文件，并且存在值，直接读出缓存
         if (file_exists($cacheRouterFileConfig)) {
             $configRouter = json_decode(file_get_contents($cacheRouterFileConfig), true);
+
             if (empty($configRouter)) $isRouterRead = false;
         }
 //        遍历route文件夹，并且将数据写入缓存文件
         if ($isRouterRead == false) {
+
             $files = glob('./route/*.php');
             $configRouter = [];
             foreach ($files as $item) {
                 require_once($item);
             }
             file_put_contents($cacheRouterFileConfig, json_encode(Router::$router));
+
+            return  Router::$router;
         }
         return $configRouter;
     }

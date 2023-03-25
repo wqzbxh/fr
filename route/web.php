@@ -10,3 +10,5 @@ use libs\core\Router;
 
 Router::add('user/index','web/user/index');
 Router::add('log','web/user/logRecord');
+Router::add('getParam','web/user/getParam');
+Router::add('validate','web/user/create');

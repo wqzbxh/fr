@@ -1,1 +1,1 @@
-{"index":"web\/index\/index","admin_update":"web\/index\/index","doc":"common\/Export\/exportSql","pdf":"common\/Export\/pdf","user\/index":"web\/user\/index","log":"web\/user\/logRecord"}
+{"index":"web\/index\/index","admin_update":"web\/index\/index","doc":"common\/Export\/exportSql","pdf":"common\/Export\/pdf","user\/index":"web\/user\/index","log":"web\/user\/logRecord","getParam":"web\/user\/getParam","validate":"web\/user\/create"}

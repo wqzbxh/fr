@@ -9,6 +9,7 @@
 namespace app\Controller\web;
 use app\Extend\Aop;
 use app\Model\UserModel;
+use app\Validate\UserValidate;
 use libs\core\CoreController;
 
 class UserController extends CoreController
@@ -25,6 +26,27 @@ class UserController extends CoreController
 
     public function logRecord()
     {
-       echo '1;';
+        echo '1;';
+    }
+
+    /**
+     * @return void
+     *
+     */
+    public function getParam()
+    {
+        var_dump($this->request->get('s','默认值','trim'));
+        var_dump($this->request->all());
+    }
+
+    /**
+     *
+     */
+    public function create()
+    {
+        $data = $this->request->all();
+        $UserValidate = new UserValidate();
+        $result = $UserValidate->setScene('unneedage')->validate($data);
+        return $result;
     }
 }
