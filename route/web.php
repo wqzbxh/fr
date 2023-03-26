@@ -9,7 +9,7 @@
 use libs\core\Router;
 
 Router::add('getParam','web/user/getParam');
-Router::add('validate','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
+Router::add('web/user/create','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
 
 
 Router::group('admin_',function (){

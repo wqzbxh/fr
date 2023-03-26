@@ -40,15 +40,18 @@ class App{
       $middleware = Router::$middleware;
       $class_name = $path_arr['class_name'];
       $class = new $class_name();
-      $method = $path_arr['action'];
+        $method = $path_arr['action'];
+        var_dump($path_arr);
         var_dump($middleware);
       try{
           if(isset($middleware[$path_arr['url']])){
               $middleware = $middleware[$path_arr['url']];
               $middlewareClass = new $middleware($class,$class_name,$method);
-              if(is_subclass_of($middlewareClass,'\\libs\\core\\Middleware\\')){
-                  echo  $middlewareClass->handle();
-                  return;
+              if(is_subclass_of($middlewareClass,'\libs\core\Middleware\Middleware')){
+                  $result =   $middlewareClass->handle();
+                  if(is_array($result)){
+                      echo json_encode($result);
+                  }
               }else{
                   return Error::ErrorMsg(10004);
               }
