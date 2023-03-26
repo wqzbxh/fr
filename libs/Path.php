@@ -53,7 +53,8 @@ class Path
             }
             return[
                 'class_name'=>$class_name,
-                'action'=>array_pop($path_arr) ?? 'index'
+                'action'=>array_pop($path_arr) ?? 'index',
+                'url'=>$path,
             ];
         }else{
             echo '错误的路由';

@@ -33,7 +33,7 @@ class LoadRouter
                 require_once($item);
             }
             file_put_contents($cacheRouterFileConfig, json_encode(Router::$router));
-
+            file_put_contents($cacheRouterFileConfig,json_encode(Router::$middleware),FILE_APPEND);
             return  Router::$router;
         }
         return $configRouter;

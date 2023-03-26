@@ -12,11 +12,20 @@ use libs\core\Error;
 
 class Validate
 {
+//    场景
     protected $scene = [];
+//    信息
     protected $message = [];
+//    规则
     protected $rules = [];
+//    当前场景
     protected $nowScene = null;
 
+    /**
+     * 验证主要方法
+     * @param $data
+     * @return array|true
+     */
     public function validate($data)
     {
         if($this->nowScene !== null){
@@ -57,6 +66,11 @@ class Validate
         return true;
     }
 
+    /**
+     * 设置场景，比如某个验证的时候选择一组的字段
+     * @param $value
+     * @return $this
+     */
     public function setScene($value)
     {
         $this->nowScene = $value;

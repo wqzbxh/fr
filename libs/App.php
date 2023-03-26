@@ -1,8 +1,10 @@
 <?php
 namespace libs;
 
+use libs\core\Error;
 use libs\core\LoadConfig;
 use libs\core\LoadRouter;
+use libs\core\Router;
 
 class App{
     /**
@@ -35,11 +37,26 @@ class App{
     public static function runAction()
     {
       $path_arr = Path::init();
+      $middleware = Router::$middleware;
       $class_name = $path_arr['class_name'];
+      $class = new $class_name();
+      $method = $path_arr['action'];
+        var_dump($middleware);
       try{
+          if(isset($middleware[$path_arr['url']])){
+              $middleware = $middleware[$path_arr['url']];
+              $middlewareClass = new $middleware($class,$class_name,$method);
+              if(is_subclass_of($middlewareClass,'\\libs\\core\\Middleware\\')){
+                  echo  $middlewareClass->handle();
+                  return;
+              }else{
+                  return Error::ErrorMsg(10004);
+              }
+          }
+
+          $method = $path_arr['action'];
           if(method_exists($class_name, $path_arr['action'])){
               $class = new $class_name();
-              $method = $path_arr['action'];
               if(method_exists($class,$method))
               {
                   $result = self::exec($class,$class_name,$method);

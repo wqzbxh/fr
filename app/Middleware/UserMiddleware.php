@@ -8,7 +8,13 @@
 
 namespace app\Middleware;
 
-class UserMiddleware
-{
+use libs\core\Middleware\Middleware;
 
+class UserMiddleware extends Middleware
+{
+    public function handle()
+    {
+        echo 'user Middleware';
+        return $this->next();
+    }
 }

@@ -8,7 +8,11 @@
 
 use libs\core\Router;
 
-Router::add('user/index','web/user/index');
-Router::add('log','web/user/logRecord');
 Router::add('getParam','web/user/getParam');
-Router::add('validate','web/user/create');
+Router::add('validate','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
+
+
+Router::group('admin_',function (){
+    Router::add('user/index','web/user/index');
+    Router::add('log','web/user/logRecord');
+})->middleware(\app\Middleware\UserMiddleware::class);
