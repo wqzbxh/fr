@@ -14,7 +14,7 @@ class UserMiddleware extends Middleware
 {
     public function handle()
     {
-        echo 'user Middleware';
+        echo "<h1>您已经经过中间件拦截</h1>";
         return $this->next();
     }
 }

@@ -35,17 +35,22 @@ class Path
         if(strstr($_SERVER['REQUEST_URI'], '?')){
             $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'], '?'));
         }
+
+        if($_SERVER['REQUEST_URI'] == '/'){
+            $_SERVER['REQUEST_URI']  =  '/index';
+        }
+
         if(!empty($routes[substr($_SERVER['REQUEST_URI'],1)])){
-            $path =$routes[substr($_SERVER['REQUEST_URI'],1)];
+//            取出URI 主要目的方便加入返回数组url中，以此匹配中间件
+            $url = substr($_SERVER['REQUEST_URI'],1);
+            $path =$routes[$url];
             if($path == '/') $path = 'web/index/index';
             $path_arr = explode('/',$path);
-//            $class_arr = explode("/",$path_arr[0]);
             $count = count($path_arr);
 
             $class_name = '\\app\\'."Controller".'\\';
             for($i=0;$i<$count-1;$i++){
                 if($i == $count-2){
-//              $class_name .= $class_arr[$i];
                     $class_name .= ucfirst($path_arr[$i]).'Controller';
                 }else{
                     $class_name .=$path_arr[$i].'\\';
@@ -54,10 +59,10 @@ class Path
             return[
                 'class_name'=>$class_name,
                 'action'=>array_pop($path_arr) ?? 'index',
-                'url'=>$path,
+                'url'=>$url,
             ];
         }else{
-            echo '错误的路由';
+            echo '您的王子丢了呢';
             exit;
         };
 
@@ -99,7 +104,7 @@ class Path
             ];
         }else{
 
-            echo '错误的路由';
+            echo  '您的王子丢了呢';
             exit;
         };
     }

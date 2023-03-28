@@ -40,9 +40,7 @@ class App{
       $middleware = Router::$middleware;
       $class_name = $path_arr['class_name'];
       $class = new $class_name();
-        $method = $path_arr['action'];
-        var_dump($path_arr);
-        var_dump($middleware);
+      $method = $path_arr['action'];
       try{
           if(isset($middleware[$path_arr['url']])){
               $middleware = $middleware[$path_arr['url']];
@@ -55,19 +53,15 @@ class App{
               }else{
                   return Error::ErrorMsg(10004);
               }
+              return;
           }
 
           $method = $path_arr['action'];
           if(method_exists($class_name, $path_arr['action'])){
               $class = new $class_name();
-              if(method_exists($class,$method))
-              {
-                  $result = self::exec($class,$class_name,$method);
-                  if(is_array($result)){
-                      echo json_encode($result);
-                  }
-              }else{
-                  throw new \Exception('Error');
+              $result = self::exec($class,$class_name,$method);
+              if(is_array($result)){
+                  echo json_encode($result);
               }
           }else{
               echo "<h1>class not found exception</h1>";
@@ -80,13 +74,17 @@ class App{
     public static function exec($class,$classname,$method)
     {
         global $_CONFIG;
+//        前切
         $res = $class->$method();
         $aopAfter = $classname;
         if(!empty($_CONFIG['aop'][$aopAfter])){
             $aopClassName = $_CONFIG['aop'][$aopAfter];
-            $aopClass = new $aopClassName;
-            $aopClass->exec($res);
+            $aopClass = new $aopClassName($res);
+            $aopClass->exec();
+        }else{
+            echo "此次访问不进行日志记载";
         }
+
         return $res;
 
 

@@ -33,9 +33,12 @@ class LoadRouter
                 require_once($item);
             }
             file_put_contents($cacheRouterFileConfig, json_encode(Router::$router));
+            //中间件缓存到config中
             file_put_contents($cacheRouterFileConfig,json_encode(Router::$middleware),FILE_APPEND);
+
             return  Router::$router;
         }
+
         return $configRouter;
     }
 }

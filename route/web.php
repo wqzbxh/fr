@@ -8,10 +8,15 @@
 
 use libs\core\Router;
 
+Router::add('/','web/index/index');
 Router::add('getParam','web/user/getParam');
-Router::add('web/user/create','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
 
+Router::add('index','web/index/index');
+Router::add('aaa','web/index/aaa');
+Router::get('doc','common/Export/exportSql');
+Router::get('pdf','common/Export/pdf');
 
+Router::add('create','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
 Router::group('admin_',function (){
     Router::add('user/index','web/user/index');
     Router::add('log','web/user/logRecord');

@@ -14,7 +14,13 @@ use libs\db\Db;
 class IndexController extends CoreController
 {
     public function index(){
-        $this->template->assign("name", "Fred Irving Johnathan Bradley Peppergill", true);
+        $data = [
+            ['name' => 'A','username' => '小河'],
+            ['name' => 'B','username' => '小S'],
+        ];
+        $title = '模板测试';
+        $this->template->assign("title", $title, true);
+        $this->template->assign("name", $data, true);
         $this->template->display('./app/View/web/index/index.tpl');
     }
 
@@ -37,5 +43,9 @@ class IndexController extends CoreController
 //        $stm = $db->query('select * from user');
 //        $result = $stm->fetchAll();
         var_dump($result);
+    }
+    public function aaa()
+    {
+        echo '这里是aaaa控制器,测试切片模式';
     }
 }

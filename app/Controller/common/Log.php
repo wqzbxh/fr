@@ -15,7 +15,9 @@ class Log extends Aop
 {
     public function exec()
     {
+
         // TODO: Implement exec() method.
-//        echo '记录日志';
+        echo "<h1>切片模式记录操作日志，返回信息为</h1>";
+        var_dump($this->data);
     }
 }

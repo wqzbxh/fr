@@ -6,12 +6,3 @@
  * Time:  21:26
  */
 use libs\core\Router;
-
-Router::add('index','web/index/index');
-
-Router::group('admin_',function (){
-    Router::add('update','web/index/index');
-});
-
-Router::get('doc','common/Export/exportSql');
-Router::get('pdf','common/Export/pdf');
