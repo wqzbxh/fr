@@ -1,5 +1,6 @@
 <?php
 namespace libs;
+use libs\core\Message;
 use libs\core\Router;
 
 class Path
@@ -62,7 +63,7 @@ class Path
                 'url'=>$url,
             ];
         }else{
-            echo '您的王子丢了呢';
+            echo json_encode(Message::ResponseMessage(404));
             exit;
         };
 
@@ -104,7 +105,7 @@ class Path
             ];
         }else{
 
-            echo  '您的王子丢了呢';
+            echo json_encode(Message::ResponseMessage(404));
             exit;
         };
     }

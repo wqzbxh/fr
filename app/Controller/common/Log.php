@@ -17,7 +17,13 @@ class Log extends Aop
     {
 
         // TODO: Implement exec() method.
-        echo "<h1>切片模式记录操作日志，返回信息为</h1>";
+        echo "<h1>切片模式记录(具体的控制器前切片)操作日志，返回信息为</h1>";
         var_dump($this->data);
+    }
+
+    public static function actionAop()
+    {
+        echo "<h1>切片模式记录(具体的方法前切片)操作日志，返回信息为</h1>";
+
     }
 }

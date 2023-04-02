@@ -40,16 +40,6 @@ class Router
         return new self;
     }
 
-    public static function get($url,$controllerAction){
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            self::$router[self::$prefix.$url] = $controllerAction;
-        }else{
-            echo "<h1>您需要做正确的交通工具才能启动</h1>";
-            exit;
-        }
-
-    }
-
     /**
      * @param $prefix
      * 定义前缀

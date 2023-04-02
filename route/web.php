@@ -13,8 +13,8 @@ Router::add('getParam','web/user/getParam');
 
 Router::add('index','web/index/index');
 Router::add('aaa','web/index/aaa');
-Router::get('doc','common/Export/exportSql');
-Router::get('pdf','common/Export/pdf');
+Router::add('doc','common/Export/exportSql');
+Router::add('pdf','common/Export/pdf');
 
 Router::add('create','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
 Router::group('admin_',function (){

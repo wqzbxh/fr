@@ -14,9 +14,9 @@ use libs\db\Db;
 
 abstract  class CoreModel
 {
-    public static  $DB;
+    protected  $DB;
     public function __construct()
     {
-         self::$DB = Db::connect_database();
+         $this->DB = Db::connect_database();
     }
 }

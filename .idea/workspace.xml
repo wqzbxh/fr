@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controller/web/Demo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/route/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fr.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/Log.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Validate/UserValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Validate/UserValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/config" beforeDir="false" afterPath="$PROJECT_DIR$/cache/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/route" beforeDir="false" afterPath="$PROJECT_DIR$/cache/route" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/redis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Path.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Path.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/CoreModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/CoreModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Error.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Validate/Validate.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Validate/Validate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/db/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/db/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/smarty/smarty/libs/Smarty.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/smarty/smarty/libs/Smarty.class.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/smarty/smarty" />
+      <path value="$PROJECT_DIR$/vendor/fpdf/font" />
+      <path value="$PROJECT_DIR$/vendor/fpdf/makefont" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2NqvhfPFajZb0Ch8eQpkqtTbjYa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="" />
+      <created>1680404549581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680404549581</updated>
+      <workItem from="1680404552488" duration="142000" />
+      <workItem from="1680404705599" duration="47000" />
+      <workItem from="1680404760475" duration="13574000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

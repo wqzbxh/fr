@@ -230,7 +230,6 @@ class Db
         $list = [];
         try {
             $sql = $this->getSql();
-//            var_dump($sql);
             $result = $this->db->query($sql);
             $list = $result->fetch();
         }catch (\Throwable $e){
@@ -252,6 +251,37 @@ class Db
         try {
             $result =  $this->db->query($sql);
             $list = $result->fetchAll(\PDO::FETCH_ASSOC);
+        }catch (\Throwable $exception){
+            throw new \Exception('查询异常,返回信息为:'.$exception->getMessage());
+        }
+        $this->free();
+        return $list;
+    }
+
+
+    /** 
+     * @param $sql
+     * @return array|false
+     * @throws \Exception
+     * 原生查询
+     */
+    public function queryNative(string $sql , array $arrayValue = array() , bool $isset = false)
+    {
+        $list = [];
+        try {
+            $stmt = $this->db->prepare($sql);
+            //判断是否是带有带有参数的sql语句，
+            if(is_array($arrayValue) && count($arrayValue) == count($arrayValue,1) && !empty($arrayValue)){
+                $stmt = $this->db->prepare($sql);
+            }
+            $stmt->execute($arrayValue);
+
+            if($isset){
+                $list = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            }else{
+                $list = $stmt->fetch(\PDO::FETCH_ASSOC);
+            }
+            var_dump($list);
         }catch (\Throwable $exception){
             throw new \Exception('查询异常,返回信息为:'.$exception->getMessage());
         }

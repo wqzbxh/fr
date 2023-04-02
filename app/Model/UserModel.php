@@ -12,11 +12,11 @@ use libs\core\CoreModel;
 
 class UserModel extends CoreModel
 {
-    public function test()
+    protected $tablename = 'user';
+    public function getUserModel($data)
     {
-//        var_dump(self::$DB);
-        $a = self::$DB->query('select * from user ');
-        return $a;
-
+       $result = $this->DB->table($this->tablename)->filed('username,phone,email,id')->where($data)->get();
+       return $result;
+//        return $a;
     }
 }

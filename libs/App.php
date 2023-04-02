@@ -1,7 +1,7 @@
 <?php
 namespace libs;
 
-use libs\core\Error;
+use libs\core\Message;
 use libs\core\LoadConfig;
 use libs\core\LoadRouter;
 use libs\core\Router;
@@ -48,10 +48,10 @@ class App{
               if(is_subclass_of($middlewareClass,'\libs\core\Middleware\Middleware')){
                   $result =   $middlewareClass->handle();
                   if(is_array($result)){
-                      echo json_encode($result);
+                      echo json_encode($result,true);
                   }
               }else{
-                  return Error::ErrorMsg(10004);
+                  return Message::ResponseMessage(10004);
               }
               return;
           }
@@ -61,7 +61,7 @@ class App{
               $class = new $class_name();
               $result = self::exec($class,$class_name,$method);
               if(is_array($result)){
-                  echo json_encode($result);
+                  echo json_encode($result,true);
               }
           }else{
               echo "<h1>class not found exception</h1>";
@@ -77,16 +77,13 @@ class App{
 //        前切
         $res = $class->$method();
         $aopAfter = $classname;
-        if(!empty($_CONFIG['aop'][$aopAfter])){
+        if(in_array($aopAfter,  $_CONFIG['aop'])){
             $aopClassName = $_CONFIG['aop'][$aopAfter];
             $aopClass = new $aopClassName($res);
             $aopClass->exec();
         }else{
-            echo "此次访问不进行日志记载";
+//            echo "此次访问不进行日志记载";
         }
-
         return $res;
-
-
     }
 }

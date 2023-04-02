@@ -8,7 +8,7 @@
 
 namespace libs\core\Validate;
 
-use libs\core\Error;
+use libs\core\Message;
 
 class Validate
 {
@@ -34,7 +34,7 @@ class Validate
             $fileds = array_keys($this->rules);
         }
         if(!is_array($fileds)){
-            return Error::ErrorMsg(100001);
+            return Message::ResponseMessage(100001);
         }
         foreach ($fileds as $fv){
             //循环具体字段规则 fv为字段 eg：name
@@ -54,12 +54,12 @@ class Validate
                 if($result){
                     continue;
                 }else{
-                    $message = Error::ErrorMsg(100002,$fv.'Field is not legal!');
+                    $message = Message::ResponseMessage(100002,[],$fv.'Field is not legal!');
                     $messageRule = $fv.'.'.$rule;
                     if(isset($this->message[$messageRule])){
                         $message = $this->message[$messageRule];
                     }
-                    return Error::ErrorMsg(100003,$message);
+                    return Message::ResponseMessage(100003,[],$message);
                 }
             }
         }

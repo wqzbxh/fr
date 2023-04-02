@@ -10,7 +10,7 @@ return [
         'host' => '127.0.0.1',
         'port' => '3306',
         'username' => 'root',
-        'password' => 'root',
-        'dbname' => 'testut'
+        'password' => 'admin123',
+        'dbname' => 'react'
     ]
 ];
