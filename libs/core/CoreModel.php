@@ -9,7 +9,6 @@
 namespace libs\core;
 
 
-
 use libs\db\Db;
 
 abstract  class CoreModel
