@@ -10,3 +10,5 @@
 use libs\core\Router;
 
 Router::add('login','admin/index/login');
+
+Router::add('create_timesheet','admin/index/reateTimesheet');

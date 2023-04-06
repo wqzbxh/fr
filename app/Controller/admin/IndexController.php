@@ -15,6 +15,9 @@ use libs\core\Message;
 
 class IndexController extends CoreController
 {
+    /**
+     * @return array|bool|true
+     */
     public function login()
     {
         $userModel = new UserModel();
@@ -27,5 +30,13 @@ class IndexController extends CoreController
         $result = $userModel->getUserModel($where);
         if(!$result) return Message::ResponseMessage(200001);
         return Message::ResponseMessage(200,$result);;
+    }
+    /**
+     *
+     */
+    public function reateTimesheet()
+    {
+        $data = $this->request->all();
+        var_dump($data);
     }
 }

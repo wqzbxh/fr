@@ -36,10 +36,10 @@ class IndexController extends CoreController
         $result = Db::connect_database()->table('user')->where('userId','>',30)->limit(1,3)->count();
         $result = Db::connect_database()->table('unittyp')->insert($data);
 //        $result = Db::connect_database()->table('user')->alias('nb')->where($where)->get();
-//        $result = Db::connect_database()->table('userpermiasionselection')
-//            ->leftjoin('user','user.userId = userpermiasionselection.user_id')
-//            ->leftjoin('permission','permission.id = userpermiasionselection.permission_id')
-//            ->select();
+        $result = Db::connect_database()->table('userpermiasionselection')
+            ->leftjoin('user','user.userId = userpermiasionselection.user_id')
+            ->leftjoin('permission','permission.id = userpermiasionselection.permission_id')
+            ->select();
 //        $stm = $db->query('select * from user');
 //        $result = $stm->fetchAll();
         var_dump($result);

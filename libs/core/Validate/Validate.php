@@ -20,7 +20,6 @@ class Validate
     protected $rules = [];
 //    当前场景
     protected $nowScene = null;
-
     /**
      * 验证主要方法
      * @param $data

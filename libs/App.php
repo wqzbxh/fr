@@ -39,10 +39,10 @@ class App{
       $path_arr = Path::init();
       $middleware = Router::$middleware;
       $class_name = $path_arr['class_name'];
-      $class = new $class_name();
       $method = $path_arr['action'];
       try{
           if(isset($middleware[$path_arr['url']])){
+              $class = new $class_name();
               $middleware = $middleware[$path_arr['url']];
               $middlewareClass = new $middleware($class,$class_name,$method);
               if(is_subclass_of($middlewareClass,'\libs\core\Middleware\Middleware')){

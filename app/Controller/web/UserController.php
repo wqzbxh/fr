@@ -38,7 +38,6 @@ class UserController extends CoreController
         var_dump($this->request->get('s','默认值','trim'));
         var_dump($this->request->all());
     }
-
     /**
      *
      */

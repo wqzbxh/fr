@@ -17,10 +17,10 @@ class HttpRequest
             if(substr($key,0,5) == 'HTTP_'){
                 $headers[str_replace(' ','-',strtolower(str_replace('_',' ',substr($key,5))))] = $value;
             }
-
         }
         if(array_key_exists('content-type',$headers) == false) $headers['content-type'] = $_SERVER['CONTENT_TYPE'];
         $headers['method'] = $_SERVER['REQUEST_METHOD'];
+
         return $headers;
     }
 
