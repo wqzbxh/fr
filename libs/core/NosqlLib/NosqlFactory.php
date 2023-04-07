@@ -12,7 +12,7 @@ namespace libs\core\NosqlLib;
 
 class NosqlFactory
 {
-    public static function Factory($className)
+    public static function factory($className)
     {
         $className = 'libs\core\NosqlLib\\'.$className;
         $instanceNosql = new  $className;

@@ -20,7 +20,8 @@ class RedisCache
      */
     public function getRedisInstance()
     {
-        $Redis = NosqlFactory::Factory('Redis');
+        //实例化Redis
+        $Redis = NosqlFactory::factory('Redis');
         $Redis->set('111','4454');
         $Redis->lpush('ageaa','list');
         $Redis->lpush('ssss','4545');
@@ -29,8 +30,5 @@ class RedisCache
         var_dump($Redis->hGet('user', 'haiyang'));
         var_dump($Redis->hGet('user', 'name'));
         $Redis->hMset('users', ['name' => 'ceshi', 'age' => 26]);
-
-//        $Redis->select(1);
-//        $Redis->set('age',1899,10);
     }
 }

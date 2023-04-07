@@ -22,7 +22,6 @@ class Redis implements  CoreNoSql
 
     public  $redisdb;
 
-
     /*
      * 实例化是初始化文件
      * 可链接多个服务器的redis库（需要直接实例化此类才可以，走工厂模式默认是本地的redis）
@@ -30,7 +29,6 @@ class Redis implements  CoreNoSql
 
     public function __construct($host =  null,$port = null  ,$password = null)
     {
-
         $redisConfig = Config::getConfig('redis')['redis'];
         $this->port = $redisConfig['port'];
         $this->password = $redisConfig['password'];
