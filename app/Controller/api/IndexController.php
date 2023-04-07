@@ -8,15 +8,13 @@
 
 namespace app\Controller\api;
 
+use app\Controller\common\RedisCache;
+
 class IndexController
 {
     public function index()
     {
-        $returnArray = [
-            'code' => 200,
-            'msg' => 'success!',
-            'data' => []
-        ];
-        return $returnArray;
+       $redisTest =  new  RedisCache();
+       var_dump($redisTest->getRedisInstance());
     }
 }

@@ -6,18 +6,20 @@
  * Time:  15:20
  */
 
-namespace libs\core\Redis;
+namespace libs\core\NosqlLib;
 
 interface CoreNoSql
 {
 
     /**
+     * redis\mongodb…………
      * @return mixed
      * 链接数据库
      */
-    public function  connect();
-    /**
-     * @return mixed
-     */
+    public  function  connect();
 
+    /**
+     * 返回实例
+     */
+    public function getInstance();
 }

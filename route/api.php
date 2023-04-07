@@ -6,3 +6,9 @@
  * Time:  21:26
  */
 use libs\core\Router;
+
+
+
+Router::group('api_',function (){
+    Router::add('index','api/index/index');
+})->middleware(\app\Middleware\UserMiddleware::class);

@@ -18,7 +18,7 @@ class CoreController
     protected $request;
     public function __construct()
     {
-//        $this->template = new \Smarty();
+        $this->template = new \Smarty();
         $this->request = new Request();
     }
 }

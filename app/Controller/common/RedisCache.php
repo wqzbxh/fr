@@ -8,10 +8,29 @@
 
 namespace app\Controller\common;
 
-use app\Extend\Redis;
+
+use libs\core\NosqlLib\NosqlFactory;
+use libs\core\NosqlLib\Redis;
 
 class RedisCache
 {
-//    设置用户登录信息
+    /**
+     * 获取默认的redis实例
+     * @return mixed
+     */
+    public function getRedisInstance()
+    {
+        $Redis = NosqlFactory::Factory('Redis');
+        $Redis->set('111','4454');
+        $Redis->lpush('ageaa','list');
+        $Redis->lpush('ssss','4545');
+        $Redis->select(7);
+        $Redis->hSet('user', 'name', 'haiyang');
+        var_dump($Redis->hGet('user', 'haiyang'));
+        var_dump($Redis->hGet('user', 'name'));
+        $Redis->hMset('users', ['name' => 'ceshi', 'age' => 26]);
 
+//        $Redis->select(1);
+//        $Redis->set('age',1899,10);
+    }
 }

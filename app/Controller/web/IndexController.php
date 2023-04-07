@@ -13,6 +13,7 @@ use libs\db\Db;
 
 class IndexController extends CoreController
 {
+
     public function index(){
         $data = [
             ['name' => 'A','username' => '小河'],

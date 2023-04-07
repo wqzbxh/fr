@@ -9,8 +9,6 @@
 namespace app\Controller\admin;
 
 use app\Controller\common\RandUnit;
-use app\Controller\common\RedisCache;
-use app\Extend\Redis;
 use app\Model\UserModel;
 use app\Validate\UserValidate;
 use libs\core\CoreController;
