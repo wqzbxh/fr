@@ -7,7 +7,6 @@
  */
 
 namespace app\Controller\web;
-use app\Extend\Aop;
 use app\Model\UserModel;
 use app\Validate\UserValidate;
 use libs\core\CoreController;

@@ -12,6 +12,7 @@ class HttpRequest
 {
     public static function getAllHeaders()
     {
+
         foreach ($_SERVER as $key => $value){
 //            nginx中的响应头和apache有些地方是有些去别的，比如：HTTP_CONTENT_TYPE nginx中带有HTTP但是 apache则不带PHP 需要做兼容
             if(substr($key,0,5) == 'HTTP_'){

@@ -12,6 +12,7 @@ Router::add('/','web/index/index');
 Router::add('getParam','web/user/getParam');
 
 Router::add('index','web/index/index');
+Router::add('test','web/index/index2');
 Router::add('aaa','web/index/aaa');
 Router::add('doc','common/Export/exportSql');
 Router::add('pdf','common/Export/pdf');

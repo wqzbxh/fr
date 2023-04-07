@@ -6,7 +6,7 @@
  * Time: 22:32
  */
 
-namespace app\Extend;
+namespace libs\core\Aop;
 
 abstract class Aop
 {

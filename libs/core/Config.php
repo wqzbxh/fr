@@ -25,7 +25,7 @@ class Config
         }
         return self::$instance;
     }
-    public function getConfig($key = '')
+    public static function getConfig($key = '')
     {
         $keyArray = explode('.',$key);
         global $_CONFIG;

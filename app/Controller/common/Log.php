@@ -9,7 +9,7 @@
 
 namespace app\Controller\common;
 
-use app\Extend\Aop;
+use libs\core\Aop\Aop;
 
 class Log extends Aop
 {

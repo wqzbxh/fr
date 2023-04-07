@@ -8,6 +8,9 @@
 
 namespace app\Controller\admin;
 
+use app\Controller\common\RandUnit;
+use app\Controller\common\RedisCache;
+use app\Extend\Redis;
 use app\Model\UserModel;
 use app\Validate\UserValidate;
 use libs\core\CoreController;
@@ -28,15 +31,21 @@ class IndexController extends CoreController
         $where[] = array('username','=',$data['username']);
         $where[] = array('password','=',$data['password']);
         $result = $userModel->getUserModel($where);
-        if(!$result) return Message::ResponseMessage(200001);
+        if(!$result) return Message::ResponseMessage(200001);     //登录设置token
+        $randUnit = new RandUnit();
+        $token = $randUnit->generateToken(32);
+        $result['token']=$token;
         return Message::ResponseMessage(200,$result);;
     }
+
     /**
-     *
+     * 测试接口
      */
     public function reateTimesheet()
     {
         $data = $this->request->all();
-        var_dump($data);
+        $token = $this->request->getHerder('token');
+        var_dump($data,$token);
     }
+
 }

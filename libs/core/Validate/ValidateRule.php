@@ -43,7 +43,6 @@ class ValidateRule
      */
     public static function int($data,$key,$value = false)
     {
-
         if (isset($data[$key])){
             return is_int((int)$data[$key]);
         }
@@ -98,6 +97,18 @@ class ValidateRule
     {
         if (isset($data[$key])){
             return strlen($data[$key]) <  $value;
+        }
+        return true;
+    }
+
+    /**
+     * 验证时间格式
+     */
+    public function datetime($data,$key,$value = false)
+    {
+
+        if (isset($data[$key])){
+            preg_match('/[0-9]{4}-[0-9]{2}-[0-9]{2}/', $data);
         }
         return true;
     }
