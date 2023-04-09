@@ -11,6 +11,7 @@ namespace app\Controller\common;
 class RandUnit
 {
     /**
+     * 获取Token
      * @param $length
      * @return string
      * @throws \Exception

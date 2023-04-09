@@ -16,8 +16,8 @@ class IndexController
     public function index()
     {
 //        Redis测试
-//       $redisTest =  new  RedisCache();
-//       $redisTest->getRedisInstance();
+       $redisTest =  new  RedisCache();
+       $redisTest->getRedisInstance();
 //        缓存文件测试 新增文件缓存类Cache
         $data = array(
             'name'=>'shenguan',

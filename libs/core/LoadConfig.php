@@ -13,10 +13,10 @@ class LoadConfig
     public static function load()
     {
         $cacheFileConfig = './cache/config';
-        $isRead = true;
+        $isRead = false;
         if(file_exists($cacheFileConfig)){
             $config = json_decode(file_get_contents($cacheFileConfig),true);
-            if(empty($config))  $isRead = false;
+            if(!empty($config))  $isRead = true;
         }
         if($isRead == false){
             $files = glob('./config/*.php');

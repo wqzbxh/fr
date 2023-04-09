@@ -51,6 +51,7 @@ class Cache {
     public function has($key) {
         $filename = $this->getCacheFileName($key);
         if (file_exists($filename)) {
+//           filemtime 修改其内容后返回指定文件的最后时间
             $mtime = filemtime($filename);
             if (time() - $mtime <= $this->cache_time) {
                 return true;

@@ -15,7 +15,7 @@ class UserModel extends CoreModel
     protected $tablename = 'user';
     public function getUserModel($data)
     {
-       $result = $this->DB->table($this->tablename)->filed('username,phone,email,id')->where($data)->get();
+       $result = $this->DB->table($this->tablename)->filed('id,username,phone,email,id')->where($data)->get();
        return $result;
 //        return $a;
     }

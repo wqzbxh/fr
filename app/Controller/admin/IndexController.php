@@ -33,6 +33,7 @@ class IndexController extends CoreController
         $randUnit = new RandUnit();
         $token = $randUnit->generateToken(32);
         $result['token']=$token;
+
         return Message::ResponseMessage(200,$result);;
     }
 
