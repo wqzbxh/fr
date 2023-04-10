@@ -7,7 +7,7 @@
  */
 return [
     'redis' => [
-        'host' => '127.0.0.1',
+        'host' => '1.117.159.188',
         'port' => '6379',
         'password' => 'admin123',
         'dbtabase' => 0

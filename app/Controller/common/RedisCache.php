@@ -14,21 +14,28 @@ use libs\core\NosqlLib\Redis;
 
 class RedisCache
 {
+    protected $redis;
+    public function __construct()
+    {
+        $this->redis = NosqlFactory::factory('Redis');
+    }
+
     /**
-     * 获取默认的redis实例
-     * @return mixed
+     * @param $key
+     * @param $data
+     * @return void
+     * 设置用户信息到redis中
      */
+    public function setTTUserInfo($key,$data)
+    {
+        $this->redis->select(1);
+        $this->redis->hSet($key, 'username',$data['username']);
+        $this->redis->hSet($key, 'email', $data['email']);
+        $this->redis->expire($key, 600);
+    }
+
     public function getRedisInstance()
     {
-        //实例化Redis
-        $Redis = NosqlFactory::factory('Redis');
-        $Redis->set('111','4454');
-        $Redis->lpush('ageaa','list');
-        $Redis->lpush('ssss','4545');
-        $Redis->select(7);
-        $Redis->hSet('user', 'name', 'haiyang');
-        var_dump($Redis->hGet('user', 'haiyang'));
-        var_dump($Redis->hGet('user', 'name'));
-        $Redis->hMset('users', ['name' => 'ceshi', 'age' => 26]);
+        return $this->redis;
     }
 }

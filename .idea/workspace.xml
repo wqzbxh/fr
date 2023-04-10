@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Controller/common/Ldap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/ldap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Service/LoginService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/api/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/api/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/config" beforeDir="false" afterPath="$PROJECT_DIR$/cache/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/Ldap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/Ldap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/RedisCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/RedisCache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/aop.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/aop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/redis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +93,8 @@
       <workItem from="1680916929257" duration="1292000" />
       <workItem from="1681053646507" duration="45000" />
       <workItem from="1681089646817" duration="1249000" />
-      <workItem from="1681094205350" duration="4297000" />
+      <workItem from="1681094205350" duration="13321000" />
+      <workItem from="1681110345451" duration="4325000" />
     </task>
     <servers />
   </component>

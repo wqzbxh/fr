@@ -72,7 +72,6 @@ class Router
         }else{
             self::$middleware[self::$currentUrl] = $name ;
         }
-//        var_dump(self::$middleware,self::$router);exit;
         self::$currentUrl = '';
         self::$groupUrl = [];
     }

@@ -17,8 +17,11 @@ class IndexController
     public function index()
     {
 //        Redis测试
-//       $redisTest =  new  RedisCache();
-//       $redisTest->getRedisInstance();
+
+        var_dump(Date('Y-m-d'));
+       $redisTest =  new  RedisCache();
+      $redis = $redisTest->getRedisInstance();
+      $redis->hSet('user','name','aaaa');
 //        缓存文件测试 新增文件缓存类Cache
 //        $data = array(
 //            'name'=>'shenguan',
@@ -30,11 +33,11 @@ class IndexController
 //        var_dump( $cache->get('name'));
 //        var_dump( $cache->get('company'));
 //        ldapc测试
-        //连接LDAP服务器
-        $password = 'admin';
-        $cn = 'cheng';
-        $LdapService = new Ldap();
-        $result = $LdapService->getLdapUserinfo($cn,$password);
-        var_dump($result);
+//        //连接LDAP服务器
+//        $password = 'admin';
+//        $cn = 'cheng';
+//        $LdapService = new Ldap();
+//        $result = $LdapService->getLdapUserinfo($cn,$password);
+//        var_dump($result);
     }
 }

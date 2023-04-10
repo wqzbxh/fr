@@ -13,13 +13,16 @@ use libs\core\Config;
 class Ldap
 {
     private  $domain ;
+
     private  $base ;
+
     public function __construct($host =  null,$port = null  ,$password = null)
     {
         $ldapConfig = Config::getConfig('ldap');
         $this->domain = $ldapConfig['domain'];
         $this->base = $ldapConfig['base'];
     }
+
     /*
      * 根据cn和密码进行查询
      */
@@ -39,7 +42,7 @@ class Ldap
         ldap_unbind($ldapconn);
         if ($entries['count'] > 0) {
             //用户名和密码匹配
-               return true;
+               return $entries;
         } else {
             //用户名和密码不匹配
              return  false;

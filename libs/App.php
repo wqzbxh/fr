@@ -27,7 +27,9 @@ class App{
     {
         global $_CONFIG;
         global $_CONFIG_ROUTE;
+        //注册路由
         $_CONFIG_ROUTE = LoadRouter::load();
+        //加载配置
         $_CONFIG = LoadConfig::load();
     }
     /**
@@ -77,7 +79,8 @@ class App{
 //        前切
         $res = $class->$method();
         $aopAfter = $classname;
-        if(in_array($aopAfter,  $_CONFIG['aop'])){
+//        修复切片模式 in_array 修改为 array_key_exists 。判断aop配置文件中的key 是否存在，而不是判断值
+        if(array_key_exists($aopAfter,$_CONFIG['aop'])){
             $aopClassName = $_CONFIG['aop'][$aopAfter];
             $aopClass = new $aopClassName($res);
             $aopClass->exec();

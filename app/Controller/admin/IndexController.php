@@ -10,6 +10,7 @@ namespace app\Controller\admin;
 
 use app\Controller\common\RandUnit;
 use app\Model\UserModel;
+use app\Service\LoginService;
 use app\Validate\UserValidate;
 use libs\core\CoreController;
 use libs\core\Message;
@@ -21,20 +22,14 @@ class IndexController extends CoreController
      */
     public function login()
     {
-        $userModel = new UserModel();
-        $UserValidate = new UserValidate();
         $data = $this->request->all();
-        $result = $UserValidate->setScene('unneedage')->validate($data);
-        if($result !==  true) return $result;
-        $where[] = array('username','=',$data['username']);
-        $where[] = array('password','=',$data['password']);
-        $result = $userModel->getUserModel($where);
-        if(!$result) return Message::ResponseMessage(200001);     //登录设置token
-        $randUnit = new RandUnit();
-        $token = $randUnit->generateToken(32);
-        $result['token']=$token;
-
-        return Message::ResponseMessage(200,$result);;
+        $loginService = new LoginService();
+        if($data['login_ldap'] === true){
+            $result = $loginService->ladpUserLogin($data);
+        }else{
+            $result =  $loginService->userLogin($data);
+        }
+        return $result;
     }
 
     /**
