@@ -39,7 +39,7 @@ class LoginService
             $result['token']=$token;
             $redis = new RedisCache();
             $redis->setTTUserInfo($token,$result);
-            return Message::ResponseMessage(200,$result);
+            return Message::ResponseMessage(200,$result,'');
         }else{
             return Message::ResponseMessage(300002,[],'');
         }
@@ -62,4 +62,5 @@ class LoginService
         $redis->setTTUserInfo($token,$result);
         return Message::ResponseMessage(200,$result);
     }
+
 }

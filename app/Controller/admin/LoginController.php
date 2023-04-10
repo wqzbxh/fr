@@ -9,13 +9,14 @@
 namespace app\Controller\admin;
 
 use app\Controller\common\RandUnit;
+use app\Controller\common\RedisCache;
 use app\Model\UserModel;
 use app\Service\LoginService;
 use app\Validate\UserValidate;
 use libs\core\CoreController;
 use libs\core\Message;
 
-class IndexController extends CoreController
+class LoginController extends CoreController
 {
     /**
      * @return array|bool|true
@@ -33,6 +34,19 @@ class IndexController extends CoreController
     }
 
     /**
+     * 登出
+     * @return void
+     */
+    public function logout()
+    {
+        //清除redis缓存
+        $token = $this->request->getHerder('token');
+        $redis = new RedisCache();
+        $result = $redis->del($token);
+        var_dump($result);
+        return Message::ResponseMessage(200,[],'');
+    }
+    /** 登出
      * 测试接口
      */
     public function reateTimesheet()

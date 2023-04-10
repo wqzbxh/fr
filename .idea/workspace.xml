@@ -5,19 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Service/LoginService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/api/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/api/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/common/Ldap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/Ldap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/common/RedisCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/RedisCache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Service/LoginService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/LoginService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/config" beforeDir="false" afterPath="$PROJECT_DIR$/cache/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/route" beforeDir="false" afterPath="$PROJECT_DIR$/cache/route" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/aop.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/aop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/redis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/core/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/route/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/LoadRouter.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/LoadRouter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,21 +56,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/MINE/fr",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/MINE/fr&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -94,7 +92,8 @@
       <workItem from="1681053646507" duration="45000" />
       <workItem from="1681089646817" duration="1249000" />
       <workItem from="1681094205350" duration="13321000" />
-      <workItem from="1681110345451" duration="5496000" />
+      <workItem from="1681110345451" duration="7185000" />
+      <workItem from="1681133873814" duration="2617000" />
     </task>
     <servers />
   </component>

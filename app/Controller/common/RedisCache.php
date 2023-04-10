@@ -31,11 +31,20 @@ class RedisCache
         $this->redis->select(1);
         $this->redis->hSet($key, 'username',$data['username']);
         $this->redis->hSet($key, 'email', $data['email']);
-        $this->redis->expire($key, 600);
+        $this->redis->expire($key, 1200);
     }
 
     public function getRedisInstance()
     {
         return $this->redis;
+    }
+
+    /**
+     * 删除key
+     */
+    public function del($key)
+    {
+        $this->redis->select(1);
+        return $this->redis->del($key);
     }
 }

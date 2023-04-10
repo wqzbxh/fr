@@ -16,6 +16,7 @@ class RefreshRedisToken extends Aop
     public function exec()
     {
         // TODO: Implement exec() method.
+        //例如每次用户操作结束后更新redis的时间
         echo "<h1>更新redis</h1>";
     }
 

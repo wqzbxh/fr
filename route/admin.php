@@ -9,6 +9,7 @@
 
 use libs\core\Router;
 
-Router::add('login','admin/index/login');
+Router::add('login','admin/login/login');
+Router::add('logout','admin/login/logout');
 
-Router::add('create_timesheet','admin/index/reateTimesheet');
+Router::add('create_timesheet','admin/login/reateTimesheet');
