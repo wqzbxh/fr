@@ -76,12 +76,15 @@ class App{
     public static function exec($class,$classname,$method)
     {
         global $_CONFIG;
-//        前切
+//        前切可以卸载此处
         $res = $class->$method();
         $aopAfter = $classname;
-//        修复切片模式 in_array 修改为 array_key_exists 。判断aop配置文件中的key 是否存在，而不是判断值
-        if(array_key_exists($aopAfter,$_CONFIG['aop'])){
-            $aopClassName = $_CONFIG['aop'][$aopAfter];
+
+//        判断当前的实例化的地址存在aop配置文件中是否存在，存在则进行aop的对应类实例化执行该系列操作
+        if(array_key_exists($aopAfter,$_CONFIG['aop']) || array_key_exists($aopAfter.'\\'.$method,$_CONFIG['aop'])){
+            if(array_key_exists($aopAfter,$_CONFIG['aop'])) $aopClassName = $_CONFIG['aop'][$aopAfter];
+//        如果指定了具体要进行切片的方法,默认去加载具体方法的切片配置
+            if(array_key_exists($aopAfter.'\\'.$method,$_CONFIG['aop'])) $aopClassName = $_CONFIG['aop'][$aopAfter.'\\'.$method];
             $aopClass = new $aopClassName($res);
             $aopClass->exec();
         }else{

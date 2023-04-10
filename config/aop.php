@@ -7,6 +7,7 @@
  */
 return [
     '\app\Controller\web\UserController' => \app\Controller\common\Log::class,
-    '\app\Controller\admin\IndexController' => \app\Controller\common\RefreshRedisToken::class,
+    '\app\Controller\admin\IndexController' => \app\Controller\common\Log::class,
+    '\app\Controller\admin\IndexController\reateTimesheet' => \app\Controller\common\RefreshRedisToken::class,
     '\app\Controller\web\IndexController' => \app\Controller\common\Log::class,
 ];
