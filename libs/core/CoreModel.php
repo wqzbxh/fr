@@ -11,11 +11,16 @@ namespace libs\core;
 
 use libs\db\Db;
 
+/**
+ * 模型抽象类
+ */
 abstract  class CoreModel
 {
     protected  $DB;
+
     public function __construct()
     {
          $this->DB = Db::connect_database();
     }
+
 }

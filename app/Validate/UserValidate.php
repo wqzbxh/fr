@@ -15,14 +15,13 @@ class UserValidate extends Validate
     protected $rules = [
         'username' => ['require','maxLen:8','minLen:4'],
         'password' => ['require'],
+        'age' => ['require'],
     ];
-
     protected $message =[
-        'username.require' => '姓名必须存在',
-        'password.require' => '密码必须存在',
-        'username.maxLen:8' => '最大不超过8',
-        'username.minLen:4' => '最小长度不过4',
-
+        'username.require' => 'Name must exist',
+        'password.require' => 'Password must exist',
+        'username.maxLen:8' => 'The maximum value is 8',
+        'username.minLen:4' => 'Minimum length no more than 4',
     ];
     protected $scene = [
 //        'needage' => ['name','age','password'],

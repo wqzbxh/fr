@@ -16,7 +16,7 @@ class LoadConfig
         $isRead = false;
         if(file_exists($cacheFileConfig)){
             $config = json_decode(file_get_contents($cacheFileConfig),true);
-            if(!empty($config))  $isRead = true;
+            if(!empty($config) && $config['app']['is_config_cache'] === true )  $isRead = true;
         }
         if($isRead == false){
             $files = glob('./config/*.php');

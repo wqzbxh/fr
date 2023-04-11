@@ -6,16 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/admin/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/common/RedisCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/RedisCache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/Log.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/LoginService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/LoginService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Validate/UserValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Validate/UserValidate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache/config" beforeDir="false" afterPath="$PROJECT_DIR$/cache/config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache/route" beforeDir="false" afterPath="$PROJECT_DIR$/cache/route" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/aop.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/aop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/CoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/CoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/CoreModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/CoreModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/LoadConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/LoadConfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/core/LoadRouter.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/LoadRouter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/route/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/NosqlLib/CoreNoSql.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/NosqlLib/CoreNoSql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,21 +63,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/MINE/fr&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/web/rental/rental",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -94,6 +102,7 @@
       <workItem from="1681094205350" duration="13321000" />
       <workItem from="1681110345451" duration="7185000" />
       <workItem from="1681133873814" duration="2617000" />
+      <workItem from="1681176489414" duration="11732000" />
     </task>
     <servers />
   </component>

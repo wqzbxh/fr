@@ -22,4 +22,5 @@ interface CoreNoSql
      * 返回实例
      */
     public function getInstance();
+
 }

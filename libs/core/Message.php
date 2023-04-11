@@ -20,9 +20,9 @@ class Message
         100001 => '验证规则定义错误',
         100002 => '规则定义不合法（默认被覆盖）',
         100003 => '错误信息提示（默认被覆盖）',
-        200001 => '未找到查询结果',
-        300001 => '这个LADP用户没有绑定该系统！请联系管理员！',
-        300002 => '这个LDAP用户不存在!'
+        200001 => 'No corresponding information can be found ',
+        300001 => 'This LADP user is not bound to the system! Please contact the administrator!',
+        300002 => 'The LDAP user does not exist!'
     ];
 
     /**

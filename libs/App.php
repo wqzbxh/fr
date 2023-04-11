@@ -28,9 +28,10 @@ class App{
         global $_CONFIG;
         global $_CONFIG_ROUTE;
         //注册路由
-        $_CONFIG_ROUTE = LoadRouter::load();
         //加载配置
         $_CONFIG = LoadConfig::load();
+
+        $_CONFIG_ROUTE = LoadRouter::load();
     }
     /**
      * @return void
@@ -79,12 +80,12 @@ class App{
 //        前切可以卸载此处
         $res = $class->$method();
         $aopAfter = $classname;
-
 //        判断当前的实例化的地址存在aop配置文件中是否存在，存在则进行aop的对应类实例化执行该系列操作
         if(array_key_exists($aopAfter,$_CONFIG['aop']) || array_key_exists($aopAfter.'\\'.$method,$_CONFIG['aop'])){
             if(array_key_exists($aopAfter,$_CONFIG['aop'])) $aopClassName = $_CONFIG['aop'][$aopAfter];
 //        如果指定了具体要进行切片的方法,默认去加载具体方法的切片配置
             if(array_key_exists($aopAfter.'\\'.$method,$_CONFIG['aop'])) $aopClassName = $_CONFIG['aop'][$aopAfter.'\\'.$method];
+
             $aopClass = new $aopClassName($res);
             $aopClass->exec();
         }else{

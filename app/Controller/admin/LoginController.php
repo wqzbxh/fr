@@ -15,6 +15,7 @@ use app\Service\LoginService;
 use app\Validate\UserValidate;
 use libs\core\CoreController;
 use libs\core\Message;
+use libs\core\Request;
 
 class LoginController extends CoreController
 {
@@ -51,9 +52,10 @@ class LoginController extends CoreController
      */
     public function reateTimesheet()
     {
-        $data = $this->request->all();
+        $data['name'] = $this->request->get('name');
         $token = $this->request->getHerder('token');
-        var_dump($data,$token);
+        return $data;
+//        var_dump($data,$token);
     }
 
 }

@@ -17,7 +17,7 @@ Router::add('aaa','web/index/aaa');
 Router::add('doc','common/Export/exportSql');
 Router::add('pdf','common/Export/pdf');
 
-Router::add('create','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
+//Router::add('create','web/user/create')->middleware(\app\Middleware\UserMiddleware::class);
 
 Router::group('admin_',function (){
     Router::add('user/index','web/user/index');
