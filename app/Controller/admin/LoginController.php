@@ -19,6 +19,12 @@ use libs\core\Request;
 
 class LoginController extends CoreController
 {
+
+//    public function __construct(RedisCache $redisCache)
+//    {
+//        var_dump($redisCache->getRedisInstance()->set('aa','aa'));
+//    }
+
     /**
      * @return array|bool|true
      */
@@ -50,8 +56,9 @@ class LoginController extends CoreController
     /** 登出
      * 测试接口
      */
-    public function reateTimesheet()
+    public function reateTimesheet(Request $request)
     {
+        var_dump($request->all());exit;
         $data['name'] = $this->request->get('name');
         $token = $this->request->getHerder('token');
         return $data;

@@ -8,7 +8,7 @@
 return [
     'app_name' => 'HaiyangTest',
     'is_forced_router' => true,
-    'debug' => true,
+    'debug' => 'On',
 //    是否开启加载config缓存
     'is_config_cache' => false,
 //    是否开启加载路由缓存缓存
