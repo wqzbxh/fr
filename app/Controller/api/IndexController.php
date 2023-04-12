@@ -10,9 +10,11 @@ namespace app\Controller\api;
 
 use app\Controller\common\Ldap;
 use app\Controller\common\RedisCache;
+use app\Model\UserModel;
 use libs\core\Cache\Cache;
+use libs\core\CoreController;
 
-class IndexController
+class IndexController extends CoreController
 {
     public function index()
     {
@@ -39,5 +41,14 @@ class IndexController
 //        $LdapService = new Ldap();
 //        $result = $LdapService->getLdapUserinfo($cn,$password);
 //        var_dump($result);
+//        批量插入
+        $data = [
+            ['username'=>'AAAAAA','password'=>'aaaaaa','type'=>2],
+            ['username'=>'BBBBBB','password'=>'aaaaaa','type'=>2],
+            ['username'=>'xiaohei','password'=>'aaaaaa','type'=>2],
+            ['username'=>'xiaobai','password'=>'aaaaaa','type'=>2],
+        ];
+        $usermode = new UserModel();
+        $usermode->test($data);
     }
 }

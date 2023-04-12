@@ -36,6 +36,7 @@ class Reflection
         $instance = $reflectionInstance->newInstanceArgs($constructorParam) ;
 
         // 根据给定的类名和方法名创建一个ReflectionMethod实例，这允许我们检查该方法及其参数、返回值等。
+
         $reflectMethod = new \ReflectionMethod($class_name, $method);
         // 获取该方法的参数列表。
         $methodparam = self::getParams($reflectMethod);

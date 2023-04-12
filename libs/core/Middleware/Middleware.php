@@ -26,6 +26,6 @@ abstract class Middleware
 
     protected function next()
     {
-        return App::exec($this->class,$this->class_name,$this->method);
+        return App::exec($this->class_name,$this->method);
     }
 }

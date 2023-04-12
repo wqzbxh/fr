@@ -54,6 +54,7 @@ class App{
               $class = new $class_name();
               // 获取当前中间件名称
               $middleware = $middleware[$path_arr['url']];
+
               // 实例化中间件
               $middlewareClass = new $middleware($class,$class_name,$method);
               // 判断是否为中间件的子类

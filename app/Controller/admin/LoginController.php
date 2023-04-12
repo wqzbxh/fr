@@ -58,11 +58,15 @@ class LoginController extends CoreController
      */
     public function reateTimesheet(Request $request)
     {
-        var_dump($request->all());exit;
+//        var_dump($request->all());exit;
+        $model = new UserModel();
+        var_dump($request);
+        $model->test();
         $data['name'] = $this->request->get('name');
         $token = $this->request->getHerder('token');
         return $data;
 //        var_dump($data,$token);
+
     }
 
 }
