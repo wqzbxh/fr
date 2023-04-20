@@ -26,6 +26,7 @@ class Reflection
             // 如果类名或方法名为空，抛出异常
             return  Message::ResponseMessage(421,);
         }
+
         // 根据给定的类名创建一个ReflectionClass实例，用于检查类及其属性、方法
         $reflectionInstance  = new \ReflectionClass($class_name);
         // 获取该类的构造函数，如果有的话。我们需要这个来创建该类的一个新实例。
@@ -38,8 +39,10 @@ class Reflection
         // 根据给定的类名和方法名创建一个ReflectionMethod实例，这允许我们检查该方法及其参数、返回值等。
 
         $reflectMethod = new \ReflectionMethod($class_name, $method);
+
         // 获取该方法的参数列表。
         $methodparam = self::getParams($reflectMethod);
+
         try {
             // 调用该方法并返回执行结果
             $res = $reflectMethod->invokeArgs($instance,$methodparam);

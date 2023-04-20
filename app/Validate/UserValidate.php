@@ -20,7 +20,7 @@ class UserValidate extends Validate
     protected $message =[
         'username.require' => 'Name must exist',
         'password.require' => 'Password must exist',
-        'username.maxLen:8' => 'The maximum value is 8',
+        'username.maxLen:16' => 'The maximum value is 8',
         'username.minLen:4' => 'Minimum length no more than 4',
     ];
     protected $scene = [

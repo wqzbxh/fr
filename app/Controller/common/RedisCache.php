@@ -14,7 +14,7 @@ use libs\core\NosqlLib\Redis;
 
 class RedisCache
 {
-    protected $redis;
+    public $redis;
     public function __construct()
     {
         $this->redis = NosqlFactory::factory('Redis');

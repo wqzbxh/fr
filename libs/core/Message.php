@@ -14,12 +14,14 @@ class Message
      *
      */
      const Messages = [
+         //        1、开头系统错误
          200 => 'Success!',
          404 => 'Undefined page',
          421 => 'An exception occurred during the execution of invokeArgs',
          422 => 'Undefined method name or class name',
          423 => 'There is a problem with middleware inheritance',
-//        1、开头系统错误
+         604 => 'redis Anomalous portal venous connection',
+
         100001 => 'Validation rule definition error',
         100002 => 'Rule definition invalid (overridden by default)',
         100003 => 'Error message prompt (overwritten by default)',

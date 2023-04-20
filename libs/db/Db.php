@@ -317,7 +317,7 @@ class Db
         }
         $sql .= ' '.$this->order;
         $sql .= ' '.$this->limit;
-//        var_dump($sql);
+
         return $sql;
 
     }
@@ -326,7 +326,6 @@ class Db
      * @param array $data 插入的数据，以关联数组形式传入，键为列名，值为插入的值。
      * @return bool 插入成功时返回true，插入失败时返回false。
      */
-
 
     public function insert($data)
     {

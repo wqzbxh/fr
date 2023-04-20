@@ -1,0 +1,30 @@
+*   Trying 39.100.139.241:443...
+* TCP_NODELAY set
+* Connected to ip.useragentinfo.com (39.100.139.241) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: CN=ip.useragentinfo.com
+*  start date: Mar  7 00:00:00 2023 GMT
+*  expire date: Mar  7 23:59:59 2024 GMT
+*  subjectAltName: host "ip.useragentinfo.com" matched cert's "ip.useragentinfo.com"
+*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=Encryption Everywhere DV TLS CA - G1
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+> GET /json?ip=116.179.37.4 HTTP/1.1
+Host: ip.useragentinfo.com
+Accept: */*
+Content-Length: 0
+Content-Type: application/x-www-form-urlencoded
+
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Server: nginx
+< Date: Wed, 19 Apr 2023 09:56:54 GMT
+< Content-Type: application/octet-stream
+< Content-Length: 36
+< Connection: keep-alive
+< Content-Type: application/json
+< 
+* Connection #0 to host ip.useragentinfo.com left intact
