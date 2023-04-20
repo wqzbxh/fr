@@ -4,7 +4,8 @@
     "require": {
         "php": ">=7.3",
         "phpoffice/phpspreadsheet": "^1.28",
-        "smarty/smarty": "^4.3"
+        "smarty/smarty": "^4.3",
+        "symfony/mailer": "5.4"
     },
     "autoload": {
         "psr-4": {

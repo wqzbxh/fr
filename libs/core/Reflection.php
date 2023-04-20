@@ -49,7 +49,15 @@ class Reflection
             return $res;
         } catch (\Exception $e) {
             // 如果执行invokeArgs过程中发生异常，
-            return  Message::ResponseMessage(421,);
+            $exceptionData = array(
+                'status' => 'error',
+                'message' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
+            );
+            print_r($exceptionData);exit;
+            return  Message::ResponseMessage(421,$exceptionData,'');
         }
     }
 

@@ -15,15 +15,19 @@ use libs\core\Cache\Cache;
 use libs\core\CoreController;
 use libs\core\Curl\Curl;
 use libs\core\Request;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mime\Address;
+use Symfony\Component\Mime\Email;
 
 class IndexController extends CoreController
 {
     public function index(Request $request)
     {
-        $curl = new Curl('https://ip.useragentinfo.com/json?ip=116.179.37.4');
-
-        $response = $curl->get('');
-        var_dump($response);
+//        $curl = new Curl('https://ip.useragentinfo.com/json?ip=116.179.37.4');
+//
+//        $response = $curl->get('');
+//        var_dump($response);
 //      var_dump($request->all());
 //       $redisTest =  new  RedisCache();
 //      $redis = $redisTest->getRedisInstance();
@@ -62,6 +66,39 @@ class IndexController extends CoreController
 //        $LdapService = new Ldap();
 //        $result = $LdapService->getLdapUserinfo($cn,$password);
 //        var_dump($result);
+        return $this->email();
 
+    }
+
+    /**
+     * @return null
+     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
+     *
+     * 将QQ邮箱的SMTP服务器地址为smtp.qq.com:465，
+     * QQ邮箱账号
+     * 授权码（不是登录密码）进行身份验证。
+     */
+    public function email()
+    {
+        $transport = Transport::fromDsn('smtp://smtp.qq.com:465');
+        $transport->setUsername('179939480@qq.com');
+        $transport->setPassword('anjawckjdcwdbhai');
+        $mailer = new Mailer($transport);
+        $path = './public/image/logo.jpg';
+//        $path = './a.text';
+        $email = (new Email())
+//            ->from('179939480@qq.com','nihao')//设置发件人的电子邮件地址和名称。第一个参数是发件人的电子邮件地址，第二个参数是可选的发件人名称。
+            ->from(new Address('179939480@qq.com', 'Haiyang'))
+            ->to(new Address('wqzbxh@163.com', 'Haiyang Recipient'))
+            ->to('wqzbxh@163.com')// 设置邮件的收件人地址。
+//            ->cc('1332548325@qq.com')// 设置邮件的抄送地址。
+//            ->bcc('bcc@example.com')//设置邮件的暗送地址。
+//            ->replyTo('fabien@example.com')// 设置邮件的回复地址。
+            ->priority(Email::PRIORITY_HIGH)//设置邮件的优先级为高。
+            ->subject('Time for Symfony Mailer!')//设置邮件的主题。
+            ->text('Sending emails is fun again!')//设置邮件的纯文本内容。
+            ->attach(file_get_contents($path),'1.jpg')//添加一个附件。第一个参数是附件的内容，第二个参数是附件的文件名。
+            ->html('<p>See Twig integration for better HTML integration!</p>');// 设置邮件的HTML内容。
+            return $mailer->send($email);
     }
 }

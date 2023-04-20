@@ -37,12 +37,7 @@ class Message
     public static function ResponseMessage(int $code,array $data = [],$msg = false )
     {
         $returnMessage = self::Messages[$code];
-        $codeeErrorLocation = '';
-        if($code < 100001){
-            //系统字自定义错误
-            $codeeErrorLocation = 'Information Location: ' . __FILE__ . " LINE：" . __LINE__;
-        }
         if($msg) $returnMessage = $msg ;
-        return array('code'=>$code,'msg'=> $returnMessage.$codeeErrorLocation,'data'=>$data);
+        return array('code'=>$code,'msg'=> $returnMessage,'data'=>$data);
     }
 }
