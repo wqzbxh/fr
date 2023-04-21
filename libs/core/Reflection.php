@@ -56,8 +56,7 @@ class Reflection
                 'file' => $e->getFile(),
                 'line' => $e->getLine()
             );
-            print_r($exceptionData);exit;
-            return  Message::ResponseMessage(421,$exceptionData,'');
+            return  Message::ResponseMessage(400,$exceptionData);
         }
     }
 

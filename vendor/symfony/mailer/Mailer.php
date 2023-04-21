@@ -41,7 +41,6 @@ final class Mailer implements MailerInterface
     {
         if (null === $this->bus) {
             $this->transport->send($message, $envelope);
-
             return;
         }
 

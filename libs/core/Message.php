@@ -16,6 +16,7 @@ class Message
      const Messages = [
          //        1、开头系统错误
          200 => 'Success!',
+         400 => 'Failed to call object, please check for errors',
          404 => 'Undefined page',
          421 => 'An exception occurred during the execution of invokeArgs',
          422 => 'Undefined method name or class name',

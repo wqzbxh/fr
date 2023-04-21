@@ -10,15 +10,19 @@ namespace app\Controller\api;
 
 use app\Controller\common\Ldap;
 use app\Controller\common\RedisCache;
+use app\ExtraExpand\server\EmailSender;
 use app\Model\UserModel;
 use libs\core\Cache\Cache;
 use libs\core\CoreController;
 use libs\core\Curl\Curl;
+use libs\core\Message;
 use libs\core\Request;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;
+
+
 
 class IndexController extends CoreController
 {
@@ -50,10 +54,12 @@ class IndexController extends CoreController
 //      $redis = $redisTest->getRedisInstance();
 //      $redis->hSet('user','name','aaaa');
 //        缓存文件测试 新增文件缓存类Cache
-//        $data = array(
-//            'name'=>'shenguan',
-//            'age' => 1,
-//        );
+        $data = array(array(
+            'name'=>'shenguan',
+            'age' => 1,
+        ));
+
+
 //        $cache = new Cache();
 //        $cache->set("name", "wanghaiyang");
 //        $cache->set("company", $data);
@@ -66,39 +72,34 @@ class IndexController extends CoreController
 //        $LdapService = new Ldap();
 //        $result = $LdapService->getLdapUserinfo($cn,$password);
 //        var_dump($result);
-        return $this->email();
+         $this->testMail();
 
     }
 
     /**
-     * @return null
-     * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
-     *
-     * 将QQ邮箱的SMTP服务器地址为smtp.qq.com:465，
-     * QQ邮箱账号
-     * 授权码（不是登录密码）进行身份验证。
+     * @return void
+     * 支持多个附件 ，发送多人等操作
      */
-    public function email()
+    public function testMail()
     {
+
         $transport = Transport::fromDsn('smtp://smtp.qq.com:465');
         $transport->setUsername('179939480@qq.com');
         $transport->setPassword('anjawckjdcwdbhai');
-        $mailer = new Mailer($transport);
-        $path = './public/image/logo.jpg';
-//        $path = './a.text';
-        $email = (new Email())
-//            ->from('179939480@qq.com','nihao')//设置发件人的电子邮件地址和名称。第一个参数是发件人的电子邮件地址，第二个参数是可选的发件人名称。
-            ->from(new Address('179939480@qq.com', 'Haiyang'))
-            ->to(new Address('wqzbxh@163.com', 'Haiyang Recipient'))
-            ->to('wqzbxh@163.com')// 设置邮件的收件人地址。
-//            ->cc('1332548325@qq.com')// 设置邮件的抄送地址。
-//            ->bcc('bcc@example.com')//设置邮件的暗送地址。
-//            ->replyTo('fabien@example.com')// 设置邮件的回复地址。
-            ->priority(Email::PRIORITY_HIGH)//设置邮件的优先级为高。
-            ->subject('Time for Symfony Mailer!')//设置邮件的主题。
-            ->text('Sending emails is fun again!')//设置邮件的纯文本内容。
-            ->attach(file_get_contents($path),'1.jpg')//添加一个附件。第一个参数是附件的内容，第二个参数是附件的文件名。
-            ->html('<p>See Twig integration for better HTML integration!</p>');// 设置邮件的HTML内容。
-            return $mailer->send($email);
+
+        $emailSender = new EmailSender($transport, '179939480@qq.com');
+
+        $subject = '邮件';
+        $textBody = 'Sending emails is fun again!';
+        $htmlBody = '<p>See Twig integration for better HTML integration!</p>';
+        $attachments = [
+            ['path' => './public/image/logo.jpg', 'filename' => 'logo.jpg'],
+            ['path' => './a.text', 'filename' => 'a.text']
+        ];
+        $toRecipients = [new Address('wqzbxh@163.com', 'Haiyang Recipient')];
+//        $ccRecipients = [new Address('cc-recipient@example.com', 'CC Recipient')];
+//        $bccRecipients = [new Address('bcc-recipient@example.com', 'BCC Recipient')];
+
+        $emailSender->sendEmail($subject, $textBody, $htmlBody, $attachments, $toRecipients);
     }
 }
