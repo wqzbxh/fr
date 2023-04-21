@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/app/ExtraExpand/server/EmailSender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controller/api/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/api/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ExtraExpand/server/Mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/core/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/core/Reflection.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Reflection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/symfony/mailer/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/mailer/Mailer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ExtraExpand/server/EmailSender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ExtraExpand/server/EmailSender.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +121,7 @@
       <workItem from="1681782645943" duration="601000" />
       <workItem from="1681891548463" duration="3913000" />
       <workItem from="1682040378587" duration="1745000" />
-      <workItem from="1682042494549" duration="6005000" />
+      <workItem from="1682042494549" duration="8027000" />
     </task>
     <servers />
   </component>

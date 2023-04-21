@@ -87,7 +87,7 @@ class IndexController extends CoreController
         $transport->setUsername('179939480@qq.com');
         $transport->setPassword('anjawckjdcwdbhai');
 
-        $emailSender = new EmailSender($transport, '179939480@qq.com');
+        $emailSender = new EmailSender($transport, '179939480@qq.com','哑巴湖大水怪');
 
         $subject = '邮件';
         $textBody = 'Sending emails is fun again!';

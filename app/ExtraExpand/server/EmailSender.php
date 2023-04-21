@@ -20,17 +20,19 @@ class EmailSender
 {
     private $mailer;
     private $senderAddress;
+    private $senderName;
 
-    public function __construct(TransportInterface $transport, string $senderAddress)
+    public function __construct(TransportInterface $transport, string $senderAddress,$senderName)
     {
         $this->mailer = new Mailer($transport);
         $this->senderAddress = $senderAddress;
+        $this->senderName = $senderName;
     }
 
     public function sendEmail(string $subject, string $textBody, string $htmlBody, array $attachments, array $toRecipients, array $ccRecipients = [], array $bccRecipients = [])
     {
         $email = (new Email())
-            ->from(new Address($this->senderAddress))
+            ->from(new Address($this->senderAddress,$this->senderName))
             ->to(...$toRecipients)
             ->cc(...$ccRecipients)
             ->bcc(...$bccRecipients)
