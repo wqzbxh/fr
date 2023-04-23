@@ -13,6 +13,8 @@ use app\Controller\common\RedisCache;
 use app\Model\UserModel;
 use app\Service\LoginService;
 use app\Validate\UserValidate;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use libs\core\CoreController;
 use libs\core\Message;
 use libs\core\Request;
@@ -59,12 +61,27 @@ class LoginController extends CoreController
     public function reateTimesheet(Request $request)
     {
 //        var_dump($request->all());exit;
-        $model = new UserModel();
-        var_dump($request);
-        $model->test();
-        $data['name'] = $this->request->get('name');
+
+
         $token = $this->request->getHerder('token');
-        return $data;
+        $decoded = JWT::decode($token, new Key('wqzbxh', 'HS256'));
+        $decoded = get_object_vars($decoded);
+        $decoded['ep'] = time()+7200;
+        $jwt = JWT::encode($decoded, 'wqzbxh', 'HS256');
+        $signArray = explode('.',$jwt);
+
+        $sign = array_pop($signArray);
+        $result['token']=$jwt;
+        //删除原来的redis中的key
+        $redis = new RedisCache();
+        $redis->setTTUserInfo($sign,$result);
+        $this->token = $jwt;
+        header("Authorization: Bearer " . $this->token);
+        return Message::ResponseMessage(200,[],'');
+//        $model = new UserModel();
+//
+//        $model->test();
+//        $data['name'] = $this->request->get('name');
 //        var_dump($data,$token);
 
     }

@@ -28,6 +28,7 @@ class IndexController extends CoreController
 {
     public function index(Request $request)
     {
+
 //        $curl = new Curl('https://ip.useragentinfo.com/json?ip=116.179.37.4');
 //
 //        $response = $curl->get('');
@@ -72,7 +73,7 @@ class IndexController extends CoreController
 //        $LdapService = new Ldap();
 //        $result = $LdapService->getLdapUserinfo($cn,$password);
 //        var_dump($result);
-         $this->testMail();
+//         $this->testMail();
 
     }
 
@@ -82,7 +83,6 @@ class IndexController extends CoreController
      */
     public function testMail()
     {
-
         $transport = Transport::fromDsn('smtp://smtp.qq.com:465');
         $transport->setUsername('179939480@qq.com');
         $transport->setPassword('anjawckjdcwdbhai');
@@ -101,5 +101,14 @@ class IndexController extends CoreController
 //        $bccRecipients = [new Address('bcc-recipient@example.com', 'BCC Recipient')];
 
         $emailSender->sendEmail($subject, $textBody, $htmlBody, $attachments, $toRecipients);
+    }
+
+    /**
+     * @return void
+     *
+     */
+    public function jwt(Request $request)
+    {
+        var_dump($request->all());
     }
 }

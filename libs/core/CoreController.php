@@ -16,10 +16,12 @@ class CoreController
      */
     protected  $template;
     protected $request;
+    protected $token;
 
     public function __construct()
     {
         $this->template = new \Smarty();
         $this->request = new Request();
+        $this->token = $this->request->getHerder('token');
     }
 }

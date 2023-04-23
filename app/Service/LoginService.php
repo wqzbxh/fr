@@ -13,6 +13,8 @@ use app\Controller\common\RandUnit;
 use app\Controller\common\RedisCache;
 use app\Model\UserModel;
 use app\Validate\UserValidate;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use libs\core\Message;
 
 class LoginService
@@ -55,11 +57,15 @@ class LoginService
         $where[] = array('password','=',$data['password']);
         $result = $userModel->getUserModel($where);
         if(!$result) return Message::ResponseMessage(200001);     //登录设置token
-        $randUnit = new RandUnit();
-        $token = $randUnit->generateToken(32);
-        $result['token']=$token;
+        unset($result['password']);
+//        设置过期时间
+        $result['ep'] = time() + 7200;
+        $jwt = JWT::encode($result, 'wqzbxh', 'HS256');
+        $signArray = explode('.',$jwt);
+        $sign = array_pop($signArray);
+        $result['token']=$jwt;
         $redis = new RedisCache();
-        $redis->setTTUserInfo($token,$result);
+        $redis->setTTUserInfo($sign,$result);
         return Message::ResponseMessage(200,$result);
     }
 

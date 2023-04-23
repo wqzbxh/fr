@@ -13,5 +13,7 @@ return [
     'is_config_cache' => false,
 //    是否开启加载路由缓存缓存
     'is_route_cache' => false,
+//    jwt密钥
+    'jwt_secret_key' => 'wqzbxh',
 
 ];
