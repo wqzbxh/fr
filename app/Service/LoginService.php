@@ -13,8 +13,8 @@ use app\Controller\common\RandUnit;
 use app\Controller\common\RedisCache;
 use app\Model\UserModel;
 use app\Validate\UserValidate;
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+use libs\core\Config;
+use libs\core\Jwt\JWT;
 use libs\core\Message;
 
 class LoginService
@@ -49,6 +49,7 @@ class LoginService
 
     public function userLogin(array $data)
     {
+//        $KEY = Config::getConfig('app')['jwt_secret_key'];
         $userModel = new UserModel();
         $UserValidate = new UserValidate();
         $result = $UserValidate->setScene('unneedage')->validate($data);

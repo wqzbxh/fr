@@ -5,6 +5,7 @@ use libs\core\Message;
 use libs\core\LoadConfig;
 use libs\core\LoadRouter;
 use libs\core\Reflection;
+use libs\core\Request;
 use libs\core\Router;
 
 class App{

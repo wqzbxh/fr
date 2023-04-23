@@ -9,6 +9,7 @@
 namespace libs\core\Middleware;
 
 use libs\App;
+use libs\core\Request;
 
 abstract class Middleware
 {

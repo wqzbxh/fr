@@ -13,8 +13,7 @@ use app\Controller\common\RedisCache;
 use app\Model\UserModel;
 use app\Service\LoginService;
 use app\Validate\UserValidate;
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+use libs\core\Config;
 use libs\core\CoreController;
 use libs\core\Message;
 use libs\core\Request;
@@ -71,7 +70,6 @@ class LoginController extends CoreController
 
         $sign = array_pop($signArray);
         $result['token']=$jwt;
-        //删除原来的redis中的key
         $redis = new RedisCache();
         $redis->setTTUserInfo($sign,$result);
         $this->token = $jwt;

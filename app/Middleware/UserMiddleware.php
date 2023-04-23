@@ -9,6 +9,7 @@
 namespace app\Middleware;
 
 use libs\core\Middleware\Middleware;
+use libs\core\Request;
 
 class UserMiddleware extends Middleware
 {

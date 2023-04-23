@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="" />
+    <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Middleware/AuthorizationMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Validate/AuthorizationValidate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/core/Jwt/JWT.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/Jwt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controller/common/RefreshRedisToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/common/RefreshToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Middleware/UserMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/UserMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Service/LoginService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/LoginService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/config" beforeDir="false" afterPath="$PROJECT_DIR$/cache/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/route" beforeDir="false" afterPath="$PROJECT_DIR$/cache/route" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/aop.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/aop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/Middleware/Middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/Middleware/Middleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/NosqlLib/NosqlFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/NosqlLib/NosqlFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/core/NosqlLib/Redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/NosqlLib/Redis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/BeforeValidException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/CachedKeySet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/ExpiredException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/JWK.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/JWT.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/Key.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/firebase/php-jwt/src/SignatureInvalidException.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +93,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
-      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -121,6 +159,7 @@
       <workItem from="1682042494549" duration="12123000" />
       <workItem from="1682250166330" duration="680000" />
       <workItem from="1682250863266" duration="2163000" />
+      <workItem from="1682259857015" duration="5582000" />
     </task>
     <servers />
   </component>
@@ -132,12 +171,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/app/Controller/api/IndexController.php</url>
-          <line>83</line>
+          <line>86</line>
           <properties>
             <option name="className" value="\app\Controller\api\IndexController" />
             <option name="methodName" value="testMail" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Controller/admin/LoginController.php</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

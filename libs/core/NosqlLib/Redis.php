@@ -44,7 +44,7 @@ class Redis implements CoreNoSql
                 $this->redis->auth($this->redisConfig['password']);
             }
         } catch (RedisException $e) {
-            Message::ResponseMessage(601,[],$e->getMessage());
+            Message::ResponseMessage(604,[],$e->getMessage());
         }
     }
 

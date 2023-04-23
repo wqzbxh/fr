@@ -58,10 +58,6 @@ class ComposerStaticInit739a2948e9680593d9a2920bcb67a707
             'MyCLabs\\Enum\\' => 13,
             'Matrix\\' => 7,
         ),
-        'F' => 
-        array (
-            'Firebase\\JWT\\' => 13,
-        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -172,10 +168,6 @@ class ComposerStaticInit739a2948e9680593d9a2920bcb67a707
         'Matrix\\' => 
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
-        ),
-        'Firebase\\JWT\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

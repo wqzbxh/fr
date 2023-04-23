@@ -9,7 +9,7 @@
 
 use libs\core\Router;
 
-Router::add('login','admin/login/login');
+Router::add('login','admin/login/login')->middleware(\app\Middleware\AuthorizationMiddleware::class);
 Router::add('logout','admin/login/logout');
 
 Router::add('create_timesheet','admin/login/reateTimesheet');

@@ -15,6 +15,7 @@ class NosqlFactory
     public static function factory($className)
     {
         $className = 'libs\core\NosqlLib\\'.$className;
+
         $instanceNosql = new  $className;
         return $instanceNosql->getInstance();
     }
