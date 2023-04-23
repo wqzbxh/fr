@@ -62,7 +62,6 @@ class LoginController extends CoreController
     {
 //        var_dump($request->all());exit;
 
-
         $token = $this->request->getHerder('token');
         $decoded = JWT::decode($token, new Key('wqzbxh', 'HS256'));
         $decoded = get_object_vars($decoded);

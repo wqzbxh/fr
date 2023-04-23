@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Controller/common/Jwt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fr.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/admin/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/api/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/api/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Service/LoginService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/LoginService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/config" beforeDir="false" afterPath="$PROJECT_DIR$/cache/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/core/CoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/libs/core/CoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-    </list>
+    <list default="true" id="37dea15e-b39a-4ab8-a7e5-3beab5847fa7" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +120,7 @@
       <workItem from="1682040378587" duration="1745000" />
       <workItem from="1682042494549" duration="12123000" />
       <workItem from="1682250166330" duration="680000" />
-      <workItem from="1682250863266" duration="1923000" />
+      <workItem from="1682250863266" duration="2163000" />
     </task>
     <servers />
   </component>
