@@ -50,6 +50,7 @@ class LoginService
     public function userLogin(array $data)
     {
 //        $KEY = Config::getConfig('app')['jwt_secret_key'];
+
         $userModel = new UserModel();
         $UserValidate = new UserValidate();
         $result = $UserValidate->setScene('unneedage')->validate($data);
@@ -57,6 +58,7 @@ class LoginService
         $where[] = array('username','=',$data['username']);
         $where[] = array('password','=',$data['password']);
         $result = $userModel->getUserModel($where);
+
         if(!$result) return Message::ResponseMessage(200001);     //登录设置token
         unset($result['password']);
 //        设置过期时间
@@ -65,8 +67,8 @@ class LoginService
         $signArray = explode('.',$jwt);
         $sign = array_pop($signArray);
         $result['token']=$jwt;
-        $redis = new RedisCache();
-        $redis->setTTUserInfo($sign,$result);
+//        $redis = new RedisCache();
+//        $redis->setTTUserInfo($sign,$result);
         return Message::ResponseMessage(200,$result);
     }
 

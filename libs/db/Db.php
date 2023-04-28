@@ -398,10 +398,10 @@ class Db
      * @return Db
      * 接口开放数据库实例
      */
-    public static function connect_database()
+    public static function connect_database($database = 'database.mysql')
     {
         if (empty($config)){
-            self::$dbCofig = Config::getInstance()->getConfig('database.mysql');
+            self::$dbCofig = Config::getInstance()->getConfig($database);
         }
         if (self::$db_instance == null) {
             self::$db_instance = new self();

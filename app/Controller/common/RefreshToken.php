@@ -20,25 +20,22 @@ class RefreshToken extends Aop
     {
         // TODO: Implement exec() method.
         //例如每次用户操作结束后更新redis的时间
-
-        $requset  =  new Request();
-        $token = $requset ->getHerder('token');
-        var_dump($token);
-        $decoded = JWT::decode($token, Config::getConfig('app')['jwt_secret_key'], 'HS256');
-        var_dump($decoded);
-        $decoded['ep'] = time()+7200;
-        $jwt = JWT::encode($decoded, 'wqzbxh', 'HS256');
-        $newdecoded = JWT::decode($jwt, Config::getConfig('app')['jwt_secret_key'], 'HS256');
-        var_dump($newdecoded);
-        $signArray = explode('.',$jwt);
-        $sign = array_pop($signArray);
-        $result['username'] = $decoded['username'];
-        $result['email'] = $decoded['email'];
-        $redis = new RedisCache();
-        $redis->setTTUserInfo($sign,$result);
-        header("Authorization: Bearer " . $jwt);
-        var_dump($jwt);
-        echo "<h1>刷新$jwt</h1>";
+//        $requset  =  new Request();
+//
+//        $token = $requset ->getHerder('token');
+//        $decoded = JWT::decode($token, Config::getConfig('app')['jwt_secret_key'], 'HS256');
+//        $decoded['ep'] = time()+7200;
+//        $jwt = JWT::encode($decoded, 'wqzbxh', 'HS256');
+//        $newdecoded = JWT::decode($jwt, Config::getConfig('app')['jwt_secret_key'], 'HS256');
+//        $signArray = explode('.',$jwt);
+//        $sign = array_pop($signArray);
+//        var_dump($token);exit;
+//        $result['username'] = $decoded['username'];
+//        $result['email'] = $decoded['email'];
+//        $redis = new RedisCache();
+//        $redis->setTTUserInfo($sign,$result);
+//        var_dump($redis);
+//        header("Authorization: Bearer " . $jwt);
     }
 
 //    public static function actionAop()

@@ -13,10 +13,12 @@ use app\Controller\common\RedisCache;
 use app\ExtraExpand\server\EmailSender;
 use app\Model\UserModel;
 use libs\core\Cache\Cache;
+use libs\core\Config;
 use libs\core\CoreController;
 use libs\core\Curl\Curl;
 use libs\core\Message;
 use libs\core\Request;
+use PragmaRX\Google2FA\Google2FA;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Address;
@@ -28,7 +30,11 @@ class IndexController extends CoreController
 {
     public function index(Request $request)
     {
-
+         $userModel = new UserModel();
+         $userModel->test();
+//        $index = $this->redisConfig = Config::getInstance();
+//        var_dump($index);
+//        var_dump($index->getConfig('redis'));
 //        $curl = new Curl('https://ip.useragentinfo.com/json?ip=116.179.37.4');
 //
 //        $response = $curl->get('');
@@ -54,11 +60,11 @@ class IndexController extends CoreController
 //       $redisTest =  new  RedisCache();
 //      $redis = $redisTest->getRedisInstance();
 //      $redis->hSet('user','name','aaaa');
-//        缓存文件测试 新增文件缓存类Cache
-        $data = array(array(
-            'name'=>'shenguan',
-            'age' => 1,
-        ));
+////        缓存文件测试 新增文件缓存类Cache
+//        $data = array(array(
+//            'name'=>'shenguan',
+//            'age' => 1,
+//        ));
 
 
 //        $cache = new Cache();
@@ -110,5 +116,38 @@ class IndexController extends CoreController
     public function jwt(Request $request)
     {
         var_dump($request->all());
+    }
+
+    public function goolyzm()
+    {
+        $google2fa = new Google2FA();
+        $secret = $google2fa->generateSecretKey();
+        $redisTest =  new  RedisCache();
+        var_dump($secret);
+        $redisTest->set('key',$secret);
+    }
+
+    public function goolyzm2()
+    {
+        $google2fa = new Google2FA();
+        $secret = $google2fa->generateSecretKey();
+        var_dump($secret);
+        $qrCode = $google2fa->getQRCodeUrl('My App', 'user@example.com', $secret);
+        var_dump($qrCode);exit;
+        echo $qrCode;
+    }
+
+    public function goolyzm3()
+    {
+        $google2fa = new Google2FA();
+        $code = $_POST['code']; // 从用户输入中获取验证码
+        $secret = 'ES7PDI32FP6CG34B'; // 从用户账户中获取密钥
+        $valid = $google2fa->verify($code, $secret);
+        var_dump($valid);
+        if ($valid) {
+            // 验证码匹配，允许用户登录
+        } else {
+            // 验证码不匹配，拒绝用户登录
+        }
     }
 }

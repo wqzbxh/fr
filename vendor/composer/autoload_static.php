@@ -50,7 +50,9 @@ class ComposerStaticInit739a2948e9680593d9a2920bcb67a707
             'Psr\\Http\\Client\\' => 16,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'PragmaRX\\Google2FA\\' => 19,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
+            'ParagonIE\\ConstantTime\\' => 23,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
@@ -153,9 +155,17 @@ class ComposerStaticInit739a2948e9680593d9a2920bcb67a707
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'PragmaRX\\Google2FA\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pragmarx/google2fa/src',
+        ),
         'PhpOffice\\PhpSpreadsheet\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
+        ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (

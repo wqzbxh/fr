@@ -9,10 +9,17 @@
 namespace app\Model;
 
 use libs\core\CoreModel;
+use libs\db\Db;
 
 class UserModel extends CoreModel
 {
     protected $tablename = 'user';
+
+    public function __construct()
+    {
+//        重写父类
+        $this->DB = Db::connect_database('database2.mysql');
+    }
 
     public function getUserModel($data)
     {
@@ -28,7 +35,7 @@ class UserModel extends CoreModel
 //            ['type','=','1 or 1 =1']
 //        ];
 //        $restult = $this->DB->table($this->tablename)->where($where)->count();
-        $restult = $this->DB->table($this->tablename)->insertMultiple($data);
+        $restult = $this->DB->table($this->tablename)->select();
         var_dump($restult);exit;
 //        return $a;
     }

@@ -58,7 +58,7 @@ class Validate
                     if(isset($this->message[$messageRule])){
                         $message = $this->message[$messageRule];
                     }
-                    return Message::ResponseMessage(100003,[],$message);
+                    return $message;
                 }
             }
         }

@@ -37,6 +37,7 @@ class LoginController extends CoreController
             $result = $loginService->ladpUserLogin($data);
         }else{
             $result =  $loginService->userLogin($data);
+
         }
         return $result;
     }

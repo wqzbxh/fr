@@ -47,4 +47,10 @@ class RedisCache
         $this->redis->select(1);
         return $this->redis->del($key);
     }
+
+    public function set($key,$value)
+    {
+        $this->redis->select(0);
+        $this->redis->set($key,$value);
+    }
 }
