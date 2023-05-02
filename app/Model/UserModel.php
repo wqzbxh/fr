@@ -31,10 +31,6 @@ class UserModel extends CoreModel
 
     public function test($data = null)
     {
-//        $where = [
-//            ['type','=','1 or 1 =1']
-//        ];
-//        $restult = $this->DB->table($this->tablename)->where($where)->count();
         $restult = $this->DB->table($this->tablename)->select();
         var_dump($restult);exit;
 //        return $a;

@@ -7,6 +7,7 @@ use libs\core\LoadRouter;
 use libs\core\Reflection;
 use libs\core\Request;
 use libs\core\Router;
+use Dotenv\Dotenv;
 
 class App{
     /**
@@ -14,6 +15,7 @@ class App{
      * 启动函数
      */
     public static function run(){
+        self::loadEnv();
         self::loadConfig();
         self::runAction();
     }
@@ -33,6 +35,15 @@ class App{
         $_CONFIG = LoadConfig::load(); // 调用LoadConfig::load()函数来加载配置，并将结果赋值给$_CONFIG全局变量
         // 注册路由
         $_CONFIG_ROUTE = LoadRouter::load(); // 调用LoadRouter::load()函数来注册路由，并将结果赋值给$_CONFIG_ROUTE全局变量
+    }
+
+    /**
+     *自动加载配置env
+     */
+    public static function loadEnv()
+    {
+        $dotenv = Dotenv::createImmutable(dirname(__DIR__));
+        $dotenv->load();
     }
     /**
      * @return void

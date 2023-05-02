@@ -12,12 +12,6 @@ class WebController
 {
     public function index()
     {
-//        echo "web";
-        $arr = [
-            'code'=>200,
-            'msg'=>'success',
-            'data'=>[]
-        ];
-        echo json_encode( $arr);
+        echo "Hello !";
     }
 }

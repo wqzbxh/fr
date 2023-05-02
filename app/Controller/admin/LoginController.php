@@ -20,26 +20,12 @@ use libs\core\Request;
 
 class LoginController extends CoreController
 {
-
-//    public function __construct(RedisCache $redisCache)
-//    {
-//        var_dump($redisCache->getRedisInstance()->set('aa','aa'));
-//    }
-
     /**
      * @return array|bool|true
      */
     public function login()
     {
-        $data = $this->request->all();
-        $loginService = new LoginService();
-        if($data['login_ldap'] === true){
-            $result = $loginService->ladpUserLogin($data);
-        }else{
-            $result =  $loginService->userLogin($data);
 
-        }
-        return $result;
     }
 
     /**
