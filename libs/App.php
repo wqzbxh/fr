@@ -75,7 +75,11 @@ class App{
                   $result =   $middlewareClass->handle();
                   // 判断返回值是否为数组，如果是，则将其转换为JSON格式
                   if(is_array($result)){
-                      echo json_encode($result,true);
+                      $jsonStr = json_encode($result, true);
+                      if ($jsonStr === false) {
+                          $jsonStr = json_encode($result, JSON_INVALID_UTF8_IGNORE);
+                      }
+                      echo $jsonStr;
                   }else{
                       echo $result;
                   }

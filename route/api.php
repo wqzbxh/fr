@@ -13,3 +13,12 @@ Router::group('api_',function (){
     Router::add('z','api/index/goolyzm2');
     Router::add('m','api/index/goolyzm3');
 })->middleware(\app\Middleware\UserMiddleware::class);
+
+
+Router::group('set_',function (){
+    Router::add('company','api/index/SetCompany');
+})->middleware(\app\Middleware\UserMiddleware::class);
+
+Router::group('test_',function (){
+    Router::add('list','api/index/getList');
+})->middleware(\app\Middleware\UserMiddleware::class);

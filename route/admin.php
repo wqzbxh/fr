@@ -12,4 +12,4 @@ use libs\core\Router;
 Router::add('login','admin/login/login');
 Router::add('logout','admin/login/logout');
 
-Router::add('create_timesheet','admin/login/reateTimesheet');
+//Router::add('set_company','admin/login/reateTimesheet');

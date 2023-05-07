@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4d8be87d-35e1-46d3-b65a-75ec3a21aecc" name="tt" url="https://tt.wqzbxh.site/">
+        <fileTransfer rootFolder="/home/wwwroot/timetrack" accessType="SFTP" host="1.117.159.188" port="22" sshConfigId="56c67e32-5ec5-4a20-a230-1020d430a827" sshConfig="root@1.117.159.188:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

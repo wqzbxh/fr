@@ -13,13 +13,14 @@ use libs\db\Db;
 
 class UserModel extends CoreModel
 {
-    protected $tablename = 'user';
+//    protected $tablename = 'user';
+    protected $tablename = 'xcx_user';
 
-    public function __construct()
-    {
+//    public function __construct()
+//    {
 //        重写父类
-        $this->DB = Db::connect_database('database2.mysql');
-    }
+//        $this->DB = Db::connect_database('database2.mysql');
+//    }
 
     public function getUserModel($data)
     {
@@ -29,10 +30,20 @@ class UserModel extends CoreModel
     }
 
 
-    public function test($data = null)
+    public function test($start,$length,$search,$order)
     {
-        $restult = $this->DB->table($this->tablename)->select();
-        var_dump($restult);exit;
-//        return $a;
+        $where = [];
+        if($search){
+            $where[] = array('name',' regexp ',$search);
+            $where[] = array('username',' regexp ',$search);
+            $where[] = array('role',' regexp ',$search);
+        }
+        $data = $this->DB->table($this->tablename)->orWhere($where)->limit(($start-1)*$length,$length)->select();
+        $total = $this->DB->table($this->tablename)->orWhere($where)->count();
+//        var_dump($total);
+        $restult['datalist'] = $data;
+        $restult['itemsPerPage'] = (int)$start;
+        $restult['totalItems'] = $total;
+        return $restult;
     }
 }

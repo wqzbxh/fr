@@ -3,7 +3,7 @@
         'name' => 'why/fr',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '1be194dfc2e87547fe12774929f47cbffbea4322',
+        'reference' => 'b43caba5079fd905377bbe7143c8ece2f6198c04',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -340,7 +340,7 @@
         'why/fr' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '1be194dfc2e87547fe12774929f47cbffbea4322',
+            'reference' => 'b43caba5079fd905377bbe7143c8ece2f6198c04',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

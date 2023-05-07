@@ -23,9 +23,9 @@ class LoginController extends CoreController
     /**
      * @return array|bool|true
      */
-    public function login()
+    public function login(Request $request)
     {
-
+        return Message::ResponseMessage(200,$request->all(),'');
     }
 
     /**

@@ -163,17 +163,42 @@ class Db
         return self::$db_instance; // 返回当前类实例，用于链式调用
     }
 
+    public function orWhere($where, $sep = '', $value = '')
+    {
+        if (is_array($where)) { // 如果传入的查询条件是数组
+            foreach ($where as $item) { // 遍历每个查询条件
+                $this->where .= ' OR '; // 连接多个查询条件的关系符
+                foreach ($item as $k => $v) { // 遍历每个查询条件的键值对
+                    if ($k == 2) { // 如果键名为2，表示该键值对为条件的值
+                        if (is_string($v)) { // 如果值为字符串类型，需要用双引号括起来
+                            $v = '"' . $v . '"';
+                        }
+                    }
+                    $this->where .= $v; // 连接每个查询条件的键值对
+                }
+            }
+        } else { // 如果传入的查询条件是字符串
+            if (is_string($value)) { // 如果条件对应的值为字符串类型，需要用双引号括起来
+                $value = '"' . $value . '"';
+            }
+            $this->where .= ' OR ' . $where . ' ' . $sep . ' ' . $value; // 连接查询条件
+        }
+        $this->where = str_replace('(1 = 1) OR', '', $this->where); // 替换无意义的查询条件
+        return self::$db_instance; // 返回当前类实例，用于链式调用
+    }
 
     public function count()
     {
         $count = 0;
         try {
-//            $sql = $this->getSql();
-            $sql = 'select count(*) from '. $this->table .' '.  $this->leftJoin .' '. $this->where;
-            var_dump($sql);
+            $sql = 'select count(*) as count  from '. $this->table .' '.  $this->leftJoin ;
+            $this->where = preg_replace('/\(1\s*=\s*1\)\s*OR\s*/', '', $this->where);
+            if($this->where != 'where (1 = 1)')
+            {
+                $sql .= ' '.$this->where;
+            }
             $result =$this->queryNative($sql);
-            var_dump($result);exit;
-            $count = count($list);
+            $count = $result['count'];
         }catch (\Throwable $e){
             die('Database connection failure!' . $e->getMessage());
         }
@@ -400,9 +425,11 @@ class Db
      */
     public static function connect_database($database = 'database.mysql')
     {
+
         if (empty($config)){
             self::$dbCofig = Config::getInstance()->getConfig($database);
         }
+//        var_dump(self::$dbCofig );
         if (self::$db_instance == null) {
             self::$db_instance = new self();
         }

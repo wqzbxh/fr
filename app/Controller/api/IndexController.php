@@ -18,6 +18,7 @@ use libs\core\CoreController;
 use libs\core\Curl\Curl;
 use libs\core\Message;
 use libs\core\Request;
+use libs\db\Db;
 use PragmaRX\Google2FA\Google2FA;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
@@ -149,5 +150,24 @@ class IndexController extends CoreController
         } else {
             // 验证码不匹配，拒绝用户登录
         }
+    }
+
+    public function SetCompany(Request $request)
+    {
+
+//        var_dump( $_FILES['logo']);
+         return Message::ResponseMessage(200,  $request->all(),'commitData:'.json_encode($request->all()));
+    }
+
+    public function getList(Request $request)
+    {
+        $start = $request->get('start');
+        $length = $request->get('length');
+        $search = $request->get('search');
+        $order = $request->get('order');
+        $userMOdel = new UserModel();
+        $restult = $userMOdel->test($start,$length,$search,$order);
+//        var_dump( $_FILES['logo']);
+        return Message::ResponseMessage(200, $restult,'');
     }
 }
